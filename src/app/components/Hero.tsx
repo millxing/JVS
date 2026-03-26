@@ -45,7 +45,7 @@ export default function Hero() {
             Join the Campaign
           </a>
           <a
-            href="https://secure.actblue.com/donate/vanscoyoc"
+            href="https://secure.actblue.com/donate/committee-to-elect-john-vanscoyoc-1"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/25 text-white font-semibold px-8 py-4 rounded-full text-lg transition-all"

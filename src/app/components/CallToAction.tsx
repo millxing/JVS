@@ -2,7 +2,7 @@ const actions = [
   {
     label: "Donate",
     description: "Support the campaign with a contribution",
-    href: "https://secure.actblue.com/donate/vanscoyoc",
+    href: "https://secure.actblue.com/donate/committee-to-elect-john-vanscoyoc-1",
     external: true,
     icon: (
       <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -72,7 +72,7 @@ export default function Footer() {
               </p>
               <p>
                 <a
-                  href="https://secure.actblue.com/donate/vanscoyoc"
+                  href="https://secure.actblue.com/donate/committee-to-elect-john-vanscoyoc-1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-gold transition-colors"

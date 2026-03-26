@@ -53,7 +53,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://secure.actblue.com/donate/vanscoyoc"
+            href="https://secure.actblue.com/donate/committee-to-elect-john-vanscoyoc-1"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-gold hover:bg-gold-dark text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors"
@@ -95,7 +95,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="https://secure.actblue.com/donate/vanscoyoc"
+              href="https://secure.actblue.com/donate/committee-to-elect-john-vanscoyoc-1"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gold hover:bg-gold-dark text-white font-semibold text-sm px-5 py-2.5 rounded-full text-center transition-colors"
