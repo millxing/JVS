@@ -5,13 +5,12 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Photo placeholder */}
           <div className="relative">
-            <div className="aspect-[4/3] bg-gradient-to-br from-navy/10 to-sage/20 rounded-2xl flex items-center justify-center overflow-hidden">
-              <div className="text-center p-8">
-                <svg className="w-16 h-16 text-navy/20 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-                <p className="text-navy/30 text-sm font-medium">Family Photo</p>
-              </div>
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+              <img
+                src="/JVS/family.png"
+                alt="The VanScoyoc family"
+                className="w-full h-full object-cover"
+              />
             </div>
             {/* Decorative accent */}
             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gold/10 rounded-2xl -z-10" />

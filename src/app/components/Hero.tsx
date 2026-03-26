@@ -13,6 +13,17 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+        {/* Portrait */}
+        <div className="animate-fade-in-up mb-6">
+          <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden border-4 border-white/20 shadow-lg shadow-black/20">
+            <img
+              src="/JVS/jvs2.png"
+              alt="John VanScoyoc"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
         {/* Badge */}
         <div className="animate-fade-in-up inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 mb-8">
           <span className="w-2 h-2 bg-gold rounded-full" />
