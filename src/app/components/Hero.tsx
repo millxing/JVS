@@ -27,7 +27,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pb-28"
+      className="relative min-h-[100vh] flex items-center justify-center overflow-hidden pt-24 pb-32"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-navy-dark via-navy to-navy-light" />
