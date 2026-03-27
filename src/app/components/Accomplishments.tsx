@@ -59,7 +59,7 @@ export default function Accomplishments() {
           <div className="max-w-3xl mx-auto">
             <div className="rounded-2xl overflow-hidden">
               <img
-                src="/JVS/sb.png"
+                src="/JVS/sb_upscaled.png"
                 alt="Brookline Select Board in session"
                 className="w-full h-auto"
               />
@@ -108,7 +108,7 @@ export default function Accomplishments() {
                 >
                   {showAll
                     ? "Show fewer"
-                    : `View all ${accomplishments.length} accomplishments`}
+                    : "View more accomplishments"}
                   <svg
                     className={`w-3.5 h-3.5 transition-transform duration-300 ${showAll ? "rotate-180" : ""}`}
                     fill="none"
@@ -163,6 +163,26 @@ export default function Accomplishments() {
             </div>
           </ScrollReveal>
         </div>
+
+        {/* Ribbon cutting and turkey photos */}
+        <ScrollReveal className="mt-12">
+          <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6">
+            <div className="rounded-2xl overflow-hidden" style={{ width: "60%" }}>
+              <img
+                src="/JVS/ribbon.png"
+                alt="Ribbon cutting ceremony"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden" style={{ width: "31.25%" }}>
+              <img
+                src="/JVS/turkey.png"
+                alt="Turkey distribution event"
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Platform", href: "#platform" },
+  { label: "Accomplishments", href: "#accomplishments" },
+  { label: "Endorsements", href: "#endorsements" },
   { label: "About", href: "#about" },
   { label: "Get Involved", href: "#get-involved" },
 ];
@@ -39,7 +41,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-5">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -64,7 +66,7 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className={`md:hidden p-2 ${scrolled ? "text-navy" : "text-white"}`}
+          className={`lg:hidden p-2 ${scrolled ? "text-navy" : "text-white"}`}
           aria-label="Toggle menu"
         >
           {mobileOpen ? (
@@ -81,7 +83,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white shadow-lg border-t border-cream-dark">
+        <div className="lg:hidden bg-white shadow-lg border-t border-cream-dark">
           <div className="px-6 py-4 flex flex-col gap-4">
             {navLinks.map((link) => (
               <a

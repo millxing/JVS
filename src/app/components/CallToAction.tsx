@@ -98,17 +98,32 @@ export default function CallToAction() {
 
         {/* Tavern campaign event photo */}
         <ScrollReveal className="mt-12">
-          <div className="max-w-2xl mx-auto">
-            <div className="rounded-2xl overflow-hidden">
+          <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-8">
+            <div className="rounded-2xl overflow-hidden md:w-1/2 shrink-0">
               <img
-                src="/JVS/tavern.png"
+                src="/JVS/tavern_upscaled.png"
                 alt="Campaign event at Washington Square Tavern"
                 className="w-full h-auto"
               />
             </div>
-            <p className="text-warm-gray text-xs mt-3 italic text-center">
-              Campaign kickoff at Washington Square Tavern
-            </p>
+            <div className="md:w-1/2">
+              <p className="text-warm-gray text-base italic">
+                We had fun at the 2023 campaign kickoff at Washington Square
+                Tavern. Special thanks to proprietors Gerry and Alma Finnegan.
+              </p>
+              <p className="text-warm-gray text-base mt-3 italic">
+                Gerry was a Brookline treasure. We suffered a great loss with{" "}
+                <a
+                  href="https://brookline.news/washington-square-tavern-owner-gerry-finnegan-dies-at-55/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-navy underline hover:text-gold transition-colors"
+                >
+                  his passing
+                </a>{" "}
+                in late February.
+              </p>
+            </div>
           </div>
         </ScrollReveal>
       </div>
