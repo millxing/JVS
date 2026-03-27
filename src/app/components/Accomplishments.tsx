@@ -167,19 +167,29 @@ export default function Accomplishments() {
         {/* Ribbon cutting and turkey photos */}
         <ScrollReveal className="mt-12">
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6">
-            <div className="rounded-2xl overflow-hidden" style={{ width: "60%" }}>
-              <img
-                src="/JVS/ribbon.png"
-                alt="Ribbon cutting ceremony"
-                className="w-full h-auto"
-              />
+            <div style={{ width: "60%" }}>
+              <div className="rounded-2xl overflow-hidden">
+                <img
+                  src="/JVS/ribbon.png"
+                  alt="Ribbon cutting ceremony"
+                  className="w-full h-auto"
+                />
+              </div>
+              <p className="text-warm-gray text-sm italic mt-3 text-center">
+                We spread the word of Brookline as a welcoming Town for startup businesses through Project Popup.
+              </p>
             </div>
-            <div className="rounded-2xl overflow-hidden" style={{ width: "31.25%" }}>
-              <img
-                src="/JVS/turkey.png"
-                alt="Turkey distribution event"
-                className="w-full h-auto"
-              />
+            <div style={{ width: "31.25%" }}>
+              <div className="rounded-2xl overflow-hidden">
+                <img
+                  src="/JVS/turkey.png"
+                  alt="Turkey distribution event"
+                  className="w-full h-auto"
+                />
+              </div>
+              <p className="text-warm-gray text-sm italic mt-3 text-center">
+                We welcomed the Turkeys Around Town project!
+              </p>
             </div>
           </div>
         </ScrollReveal>
