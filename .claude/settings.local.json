@@ -11,7 +11,8 @@
       "Bash(git add:*)",
       "Bash(git push:*)",
       "Bash(ls -lh *.html)",
-      "Bash(ls /Users/robschoen/Dropbox/CC/JVS/assets/*.png)"
+      "Bash(ls /Users/robschoen/Dropbox/CC/JVS/assets/*.png)",
+      "WebFetch(domain:www.johnvanscoyoc.com)"
     ]
   }
 }

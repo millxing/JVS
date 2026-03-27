@@ -2,9 +2,33 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Re-Elect John VanScoyoc | Brookline Select Board",
+  title: "John VanScoyoc For Select Board",
   description:
     "Experience. Independence. Brookline. Re-elect John VanScoyoc to the Brookline Select Board — May 5, 2026.",
+  openGraph: {
+    title: "John VanScoyoc For Select Board",
+    description:
+      "Experience. Independence. Brookline. Re-elect John VanScoyoc to the Brookline Select Board — May 5, 2026.",
+    url: "https://millxing.github.io/JVS/",
+    siteName: "John VanScoyoc For Select Board",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://millxing.github.io/JVS/og-image.jpg",
+        width: 916,
+        height: 394,
+        alt: "Re-Elect John VanScoyoc — Select Board",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "John VanScoyoc For Select Board",
+    description:
+      "Experience. Independence. Brookline. Re-elect John VanScoyoc to the Brookline Select Board — May 5, 2026.",
+    images: ["https://millxing.github.io/JVS/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
