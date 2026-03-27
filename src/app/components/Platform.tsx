@@ -1,3 +1,7 @@
+"use client";
+
+import ScrollReveal from "./ScrollReveal";
+
 const platforms = [
   {
     number: "1",
@@ -8,9 +12,36 @@ const platforms = [
       </svg>
     ),
     points: [
-      "Elected in 2020 and again in 2023 with 6,000+ votes — a proven track record of earning community trust.",
-      "Committed to what\u2019s best for neighborhoods AND the Town as a whole. Commercial tax revenue is crucial, and so is listening to residents impacted by development.",
-      "Pledged to find the sweet spot on the $19M+ tax cap override — protecting services while keeping taxes bearable for all.",
+      <>
+        At a crucial time for Brookline&apos;s future, with another override on
+        the ballot and a much-needed development plan for Chestnut Hill West
+        hanging in the balance, the Select Board needs my{" "}
+        <strong className="text-navy">informed and balanced approach.</strong>
+      </>,
+      <>
+        I&apos;m committed to what&apos;s best for neighborhoods AND the Town as a
+        whole.{" "}
+        <strong className="text-navy">Commercial tax revenue</strong> such as
+        Chestnut Hill West promises is crucial. So is{" "}
+        <strong className="text-navy">listening and responding</strong> to the
+        residents of Sheafe and Heath streets and Woodland Road who will be
+        impacted by a surge in development on the Office Park site. I&apos;ve met
+        with residents AND developers to get the best results for both. That
+        work will continue all the way to Town Meeting.
+      </>,
+      <>
+        As for putting a tax cap override of some $19M+ on the ballot, I&apos;m
+        committed to{" "}
+        <strong className="text-navy">protecting our services</strong> (public
+        safety, schools, parks, recreation, libraries, etc.) &mdash; and equally
+        committed to{" "}
+        <strong className="text-navy">
+          affordability for taxpayers (including tenants through their rents)
+        </strong>{" "}
+        who only have so much more to give.{" "}
+        <strong className="text-navy">Finding the sweet spot</strong> (enough
+        money for services, with a bearable tax pinch for voters) is my pledge.
+      </>,
     ],
   },
   {
@@ -21,10 +52,34 @@ const platforms = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
+    subtitle: "Expect the unexpected from me as a candidate. I propose that we:",
     points: [
-      "Update our inventory of Town properties to test market value of any that might soon lose their usefulness.",
-      "Pause spending on the Beacon Street bridle path until we get realistic cost estimates and understand the impact on trees, parking, and amenities.",
-      'Create a "tax pinch" test for future overrides — budget needs AND tax burdens should both factor into the calculation.',
+      <>
+        <strong className="text-navy">
+          Update our inventory of Town properties
+        </strong>
+        , in order to test the market value of any that might soon lose their
+        usefulness. (The Water and Sewer garage on Netherlands Road is just one
+        example that gets mentioned.)
+      </>,
+      <>
+        <strong className="text-navy">
+          Pause spending on the Beacon Street bridle path
+        </strong>{" "}
+        until we get a realistic estimate of the total costs, as well as the
+        expected disruption to Beacon Street during construction, and the
+        inevitable sacrifice of trees, parking spaces, and other amenities
+        currently in the right of way.
+      </>,
+      <>
+        <strong className="text-navy">
+          Create a &ldquo;tax pinch&rdquo; test for future overrides
+        </strong>{" "}
+        (after FY27). In short, budget needs <em>AND</em> tax burdens should
+        factor into the calculation of overrides. There&apos;s no perfect formula
+        &mdash; but seeking one is worth the effort. (And voters will let us
+        know if we get it wrong.)
+      </>,
     ],
   },
 ];
@@ -34,43 +89,51 @@ export default function Platform() {
     <section id="platform" className="py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section header */}
-        <div className="text-center mb-16">
-          <span className="text-gold font-semibold text-sm tracking-widest uppercase">
-            My Platform
-          </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy mt-3">
-            A Two-Point Message
-          </h2>
-          <div className="w-16 h-1 bg-gold mx-auto mt-4 rounded-full" />
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <span className="text-gold font-semibold text-sm tracking-widest uppercase">
+              My Platform
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy mt-3">
+              A Two-Point Message
+            </h2>
+            <div className="w-16 h-1 bg-gold mx-auto mt-4 rounded-full" />
+          </div>
+        </ScrollReveal>
 
         {/* Cards */}
         <div className="grid md:grid-cols-2 gap-8">
-          {platforms.map((item) => (
-            <div
+          {platforms.map((item, idx) => (
+            <ScrollReveal
               key={item.number}
-              className="bg-warm-white rounded-2xl shadow-sm border border-cream-dark p-8 md:p-10 hover:shadow-md transition-shadow"
+              delay={idx * 150}
+              direction={idx === 0 ? "left" : "right"}
             >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 rounded-xl bg-navy/5 flex items-center justify-center text-navy">
-                  {item.icon}
+              <div className="bg-warm-white rounded-2xl shadow-sm border border-cream-dark p-8 md:p-10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 rounded-xl bg-navy/5 flex items-center justify-center text-navy">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <span className="text-gold font-bold text-sm">Point {item.number}</span>
+                    <h3 className="font-serif text-2xl font-bold text-navy">
+                      {item.title}
+                    </h3>
+                  </div>
                 </div>
-                <div>
-                  <span className="text-gold font-bold text-sm">Point {item.number}</span>
-                  <h3 className="font-serif text-2xl font-bold text-navy">
-                    {item.title}
-                  </h3>
-                </div>
+                {item.subtitle && (
+                  <p className="text-warm-gray mb-4 italic">{item.subtitle}</p>
+                )}
+                <ul className="space-y-4">
+                  {item.points.map((point, i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0" />
+                      <span className="text-warm-gray leading-relaxed">{point}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-4">
-                {item.points.map((point, i) => (
-                  <li key={i} className="flex gap-3">
-                    <span className="mt-1.5 w-2 h-2 rounded-full bg-sage shrink-0" />
-                    <span className="text-warm-gray leading-relaxed">{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

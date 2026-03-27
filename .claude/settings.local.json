@@ -9,7 +9,9 @@
       "mcp__Claude_Preview__preview_start",
       "Bash(npm run:*)",
       "Bash(git add:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(ls -lh *.html)",
+      "Bash(ls /Users/robschoen/Dropbox/CC/JVS/assets/*.png)"
     ]
   }
 }

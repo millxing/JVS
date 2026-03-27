@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ScrollReveal from "./ScrollReveal";
 
 const featuredEndorsers = [
   { name: "Bernard Greene", title: "Select Board Chair" },
@@ -64,58 +65,64 @@ export default function Endorsements() {
     <section id="endorsements" className="py-20 md:py-28 bg-warm-white">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section header */}
-        <div className="text-center mb-16">
-          <span className="text-gold font-semibold text-sm tracking-widest uppercase">
-            Endorsements
-          </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy mt-3">
-            Trusted by Brookline Leaders
-          </h2>
-          <div className="w-16 h-1 bg-gold mx-auto mt-4 rounded-full" />
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <span className="text-gold font-semibold text-sm tracking-widest uppercase">
+              Endorsements
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy mt-3">
+              Trusted by Brookline Leaders
+            </h2>
+            <div className="w-16 h-1 bg-gold mx-auto mt-4 rounded-full" />
+          </div>
+        </ScrollReveal>
 
         {/* Featured endorsers */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
-          {featuredEndorsers.map((e) => (
-            <div
-              key={e.name}
-              className="bg-cream rounded-xl px-5 py-4 border border-cream-dark"
-            >
-              <p className="font-semibold text-navy">{e.name}</p>
-              <p className="text-warm-gray text-sm">{e.title}</p>
-            </div>
+          {featuredEndorsers.map((e, i) => (
+            <ScrollReveal key={e.name} delay={Math.min(i * 60, 400)}>
+              <div className="bg-cream rounded-xl px-5 py-4 border border-cream-dark hover:border-gold/40 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                <p className="font-semibold text-navy">{e.name}</p>
+                <p className="text-warm-gray text-sm">{e.title}</p>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 
         {/* Community endorsers */}
-        <div className="text-center">
-          <button
-            onClick={() => setShowAll(!showAll)}
-            className="inline-flex items-center gap-2 text-navy font-semibold hover:text-gold transition-colors"
-          >
-            {showAll
-              ? "Hide community endorsers"
-              : `View all ${communityEndorsers.length}+ community endorsers`}
-            <svg
-              className={`w-4 h-4 transition-transform ${showAll ? "rotate-180" : ""}`}
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+        <ScrollReveal>
+          <div className="text-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center gap-2 text-navy font-semibold hover:text-gold transition-colors"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
+              {showAll
+                ? "Hide community endorsers"
+                : `View all ${communityEndorsers.length}+ community endorsers`}
+              <svg
+                className={`w-4 h-4 transition-transform duration-300 ${showAll ? "rotate-180" : ""}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
 
-          {showAll && (
-            <div className="mt-8 columns-2 sm:columns-3 md:columns-4 gap-4 text-left">
-              {communityEndorsers.map((name) => (
-                <p key={name} className="text-warm-gray text-sm py-1">
-                  {name}
-                </p>
-              ))}
-            </div>
-          )}
-        </div>
+            {showAll && (
+              <div className="mt-8 columns-2 sm:columns-3 md:columns-4 gap-4 text-left">
+                {communityEndorsers.map((name) => (
+                  <p
+                    key={name}
+                    className="text-warm-gray text-sm py-1 hover:text-navy transition-colors"
+                  >
+                    {name}
+                  </p>
+                ))}
+              </div>
+            )}
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

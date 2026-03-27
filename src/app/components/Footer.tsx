@@ -56,8 +56,18 @@ export default function Footer() {
                 </a>
               </p>
               <p>
+                <a href="#accomplishments" className="hover:text-gold transition-colors">
+                  Track Record
+                </a>
+              </p>
+              <p>
                 <a href="#endorsements" className="hover:text-gold transition-colors">
                   Endorsements
+                </a>
+              </p>
+              <p>
+                <a href="#donors" className="hover:text-gold transition-colors">
+                  Campaign Finance
                 </a>
               </p>
               <p>

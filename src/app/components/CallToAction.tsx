@@ -1,3 +1,7 @@
+"use client";
+
+import ScrollReveal from "./ScrollReveal";
+
 const actions = [
   {
     label: "Donate",
@@ -49,41 +53,64 @@ export default function CallToAction() {
   return (
     <section id="get-involved" className="py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="bg-gradient-to-br from-navy via-navy-dark to-navy rounded-3xl px-8 py-16 md:p-16 text-center overflow-hidden relative">
-          {/* Decorative */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-48 h-48 bg-sage/10 rounded-full translate-y-1/2 -translate-x-1/2" />
+        <ScrollReveal>
+          <div className="bg-gradient-to-br from-navy via-navy-dark to-navy rounded-3xl px-8 py-16 md:p-16 text-center overflow-hidden relative">
+            {/* Decorative */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-sage/10 rounded-full translate-y-1/2 -translate-x-1/2" />
 
-          <div className="relative z-10">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-3">
-              Join the Campaign Today
-            </h2>
-            <p className="text-white/70 text-lg mb-12 max-w-xl mx-auto">
-              Time is short. There are many ways to help re-elect John to the
-              Select Board.
-            </p>
+            <div className="relative z-10">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-3">
+                Join the Campaign Today
+              </h2>
+              <p className="text-white/70 text-lg mb-12 max-w-xl mx-auto">
+                Time is short. There are many ways to help re-elect John to the
+                Select Board.
+              </p>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {actions.map((a) => (
-                <a
-                  key={a.label}
-                  href={a.href}
-                  target={a.external ? "_blank" : undefined}
-                  rel={a.external ? "noopener noreferrer" : undefined}
-                  className="group bg-white/10 hover:bg-white/15 backdrop-blur-sm border border-white/15 rounded-2xl p-6 text-left transition-all hover:scale-[1.02]"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-gold/20 flex items-center justify-center text-gold-light mb-4 group-hover:bg-gold/30 transition-colors">
-                    {a.icon}
-                  </div>
-                  <h3 className="text-white font-bold text-lg mb-1">
-                    {a.label}
-                  </h3>
-                  <p className="text-white/60 text-sm">{a.description}</p>
-                </a>
-              ))}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {actions.map((a, i) => (
+                  <a
+                    key={a.label}
+                    href={a.href}
+                    target={a.external ? "_blank" : undefined}
+                    rel={a.external ? "noopener noreferrer" : undefined}
+                    className="group bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/15 hover:border-white/30 rounded-2xl p-6 text-left transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-black/20"
+                    style={{
+                      animationDelay: `${i * 100}ms`,
+                    }}
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-gold/20 flex items-center justify-center text-gold-light mb-4 group-hover:bg-gold/40 group-hover:scale-110 transition-all duration-300">
+                      {a.icon}
+                    </div>
+                    <h3 className="text-white font-bold text-lg mb-1">
+                      {a.label}
+                    </h3>
+                    <p className="text-white/60 text-sm group-hover:text-white/80 transition-colors">
+                      {a.description}
+                    </p>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
+
+        {/* Tavern campaign event photo */}
+        <ScrollReveal className="mt-12">
+          <div className="max-w-2xl mx-auto">
+            <div className="rounded-2xl overflow-hidden">
+              <img
+                src="/JVS/tavern.png"
+                alt="Campaign event at Washington Square Tavern"
+                className="w-full h-auto"
+              />
+            </div>
+            <p className="text-warm-gray text-xs mt-3 italic text-center">
+              Campaign kickoff at Washington Square Tavern
+            </p>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
