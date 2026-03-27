@@ -27,7 +27,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
+      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pb-28"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-navy-dark via-navy to-navy-light" />
@@ -80,7 +80,7 @@ export default function Hero() {
         </div>
 
         {/* CTAs */}
-        <div className="animate-fade-in-up animation-delay-400 flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="animate-fade-in-up animation-delay-400 flex flex-col sm:flex-row gap-4 justify-center relative z-10">
           <a
             href="#get-involved"
             className="bg-gold hover:bg-gold-dark text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:shadow-lg hover:shadow-gold/25 hover:scale-105"
@@ -99,7 +99,7 @@ export default function Hero() {
       </div>
 
       {/* Wave divider */}
-      <div className="absolute bottom-0 left-0 right-0">
+      <div className="absolute bottom-0 left-0 right-0 pointer-events-none">
         <svg
           viewBox="0 0 1440 120"
           fill="none"
