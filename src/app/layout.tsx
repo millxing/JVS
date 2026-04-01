@@ -2,20 +2,32 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://millxing.github.io/JVS"),
   title: "John VanScoyoc For Select Board",
   description:
     "Experience. Independence. Brookline. Re-elect John VanScoyoc to the Brookline Select Board — May 5, 2026.",
+  keywords: [
+    "Brookline Select Board",
+    "John VanScoyoc",
+    "2026 election",
+    "Brookline",
+    "re-elect",
+  ],
+  robots: { index: true, follow: true },
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
     title: "John VanScoyoc For Select Board",
     description:
       "Experience. Independence. Brookline. Re-elect John VanScoyoc to the Brookline Select Board — May 5, 2026.",
-    url: "https://millxing.github.io/",
+    url: "https://millxing.github.io/JVS/",
     siteName: "John VanScoyoc For Select Board",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://millxing.github.io/og-image.jpg",
+        url: "https://millxing.github.io/JVS/og-image.jpg",
         width: 916,
         height: 394,
         alt: "Re-Elect John VanScoyoc — Select Board",
@@ -27,7 +39,7 @@ export const metadata: Metadata = {
     title: "John VanScoyoc For Select Board",
     description:
       "Experience. Independence. Brookline. Re-elect John VanScoyoc to the Brookline Select Board — May 5, 2026.",
-    images: ["https://millxing.github.io/og-image.jpg"],
+    images: ["https://millxing.github.io/JVS/og-image.jpg"],
   },
 };
 

@@ -23,39 +23,44 @@ const communityEndorsers = [
   "Nancy Adler", "Pat Ahlin", "Martina Albright", "Saralynn Allaire",
   "Pamela Allara", "Scott Andersen", "Rosemary Ashby", "John Bassett",
   "Jim Batchelor", "Clara Batchelor", "Jerry Berger", "Susan Berger",
-  "Eileen Berger", "Michael Berger", "Ben Birnbaum", "Peter Bleyleben",
-  "Sara Salvo Blood", "Roger Blood", "Edie Brickman", "Pauline Ho Bynum",
-  "Narcissa Campion", "Peggy Campion", "Debby K Cohen", "George Cole",
-  "Susan Dechter", "John Dempsey", "Murray Dewart", "Mary Dewart",
+  "Eileen Berger", "Michael Berger", "Ben Binbaum", "Peter Bleyleben",
+  "Sara Salvo Blood", "Roger Blood", "Sam Botsford", "Edie Brickman",
+  "Pauline Hо Bупum", "Narcissa Campion", "Peggy Campion", "Abby Coffin",
+  "Debby K Cohen", "George Cole", "Susan Helms Daley", "Susan Dechter",
+  "John Dempsey", "Marie desJardins", "Murray Dewart", "Mary Dewart",
   "Dennis Dewitt", "John Doggett", "Elton Elperin", "Tom Elwertowski",
-  "Elizabeth Erdman", "Sarah Ericsson", "Susan Erickson", "Barbara Hebert",
-  "Robin Hennessey", "Carol Hillman", "Fran Hoy", "Anne Farrington",
-  "Jonathan Fine", "Marcia Fisch", "Julian Fisher", "Dale Flecker",
-  "Marion Freedman-Gurspan", "Anita Fritze", "David Marc Goldstein",
-  "Susan Helms Daley", "Ellen Golde", "Bambi Good", "Ellen Goodman",
+  "Elizabeth Erdman", "Sarah Ericsson", "Susan Erickson", "Anne Farrington",
+  "Chuck Farrington", "Jonathan Fine", "Marcia Fisch", "Julian Fisher",
+  "Dale Flecker", "Marion Freedman-Gurspan", "Anita Fritze",
+  "David Marc Goldstein", "Ellen Golde", "Bambi Good", "Ellen Goodman",
   "Rhoda Goodwin", "Mark Gray", "Nathan Gunner", "Sally Guy",
-  "Benedicte Hallowell", "Richard Mazandi Iseke", "Cerise Jacobs",
-  "Joyce Jozwicki", "Janice Kahn", "Kitty Kaufman", "Janet Kawada",
-  "David King", "Kristine Knauf", "Geri Lambert", "Jonathan Lau",
-  "Marian Lazar", "Gerald Lazar", "Frederick Lebow", "David Lescohier",
-  "Carol Levin", "Bruce Levin", "Fred Levitan", "Casey Hatchett",
-  "Debbie Hatzieleftheriadis", "John Hebert", "Alan Leviton", "Nancy Lew",
-  "Ken Lewis", "Karen Livingston", "Pam Lodish", "Richard Mai",
-  "Carol Macbain", "Lucy Mack", "Linda Mancini", "Hugh Mattison",
-  "Arlene Mattison", "Michael Maynard", "Chris McArdle", "Colin McArdle",
-  "Diana McClure", "John McCullough", "Eric McNulty", "Steve Mead",
-  "Lettia Mead", "Robert Melzer", "Dr Keith Merlin", "Randolph Meiklejohn",
-  "Paul Hart Miller", "Peggy Morrison", "Tom Mullin", "Kendra O'Donnell",
+  "Benedicte Hallowell", "Rory Hallowell", "Casey Hatchett",
+  "Debbie Hatzieleftheriadis", "Gerard Hayes", "Barbara Hebert",
+  "John Hebert", "Robin Hennessey", "Carol Hillman", "Fran Hoy",
+  "Richard Mazandi Iseke", "Cerise Jacobs", "Nicholas Johnson",
+  "Joyce Jozwicki", "Barr Jozwicki", "Janice Kahn", "Ruth Kaplan",
+  "Priscilla Karnovsky", "Kitty Kaufman", "Janet Kawada", "David King",
+  "Kristine Knauf", "Geri Lambert", "Jonathan Lau", "Marian Lazar",
+  "Gerald Lazar", "Frederick Lebow", "David Lescohier", "Carol Levin",
+  "Bruce Levin", "Fred Levitan", "Alan Leviton", "Nancy Lew", "Ken Lewis",
+  "Karen Livingston", "Pam Lodish", "Mark Lowenstein", "Richard Mai",
+  "Carol Macbain", "Lucy Mack", "Linda Mancini", "Jon Margolis",
+  "Hugh Mattison", "Arlene Mattison", "Michael Maynard", "Chris McArdle",
+  "Colin McArdle", "Diana McClure", "John McCullough", "Eric McNulty",
+  "Steve Mead", "Letitia Mead", "Randolph Meiklejohn", "Robert Melzer",
+  "Dr Keith Merlin", "Judy Meyer", "Jessica Milhem", "Paul Hart Miller",
+  "Peggy Morrison", "Tom Mullin", "Terry Murphy", "Kendra O'Donnell",
   "Larry Onie", "John Parla", "Linda Olson Pehlke", "Danna Perry",
   "Alisa Plazonja", "Betsy Pollock", "Susan Podziba", "Luisa Raposo",
   "Judy Reece", "Peter Richardson", "Pam Roberts", "Rosemarie Roque",
   "Barry Rosen", "A. Joseph Ross", "Christine Rossell", "Stuart Rubinow",
   "Bonnie Sashin", "Cheryl Schaffer", "Jill Schiff", "Cathleen Schoen",
-  "Robert Schoen", "John Seay", "Ronnie Shapiro", "Francis Shedd-Fisher",
-  "Ellen Shoner", "John Shreffler", "Stanley Spiegel", "Alexandra Spingarn",
-  "Molly Turlisch", "Judith Vanderkay", "Barbara VanScoyoc",
-  "Kathleen Vieweg", "Donnie Wolosenko", "Jerry Wolosenko", "Mark Zarrillo",
-  "Rory Hallowell",
+  "Robert Schoen", "John Seay", "Judy Selwyn", "Lee Selwyn",
+  "Ronnie Shapiro", "Francis Shedd-Fisher", "Barbara Sherman",
+  "John Sherman", "Ellen Shoner", "John Shreffler", "Felina Silver Robinson",
+  "Stanley Spiegel", "Alexandra Spingarn", "Molly Turlisch",
+  "Judith Vanderkay", "Barbara VanScoyoc", "Kathleen Vieweg",
+  "Donnie Wolosenko", "Jerry Wolosenko", "Mark Zarrillo",
 ];
 
 export default function Endorsements() {
@@ -73,6 +78,7 @@ export default function Endorsements() {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy mt-3">
               Trusted by Brookline Leaders
             </h2>
+            <p className="text-warm-gray mt-3 text-lg">170 endorsements and growing</p>
             <div className="w-16 h-1 bg-gold mx-auto mt-4 rounded-full" />
           </div>
         </ScrollReveal>
@@ -98,7 +104,7 @@ export default function Endorsements() {
             >
               {showAll
                 ? "Hide community endorsers"
-                : `View all ${communityEndorsers.length}+ community endorsers`}
+                : "View all community endorsers"}
               <svg
                 className={`w-4 h-4 transition-transform duration-300 ${showAll ? "rotate-180" : ""}`}
                 fill="none"
