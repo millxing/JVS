@@ -12,7 +12,12 @@
       "Bash(git push:*)",
       "Bash(ls -lh *.html)",
       "Bash(ls /Users/robschoen/Dropbox/CC/JVS/assets/*.png)",
-      "WebFetch(domain:www.johnvanscoyoc.com)"
+      "WebFetch(domain:www.johnvanscoyoc.com)",
+      "Bash(open /Users/robschoen/Dropbox/CC/JVS/postcard.html)",
+      "Bash(brew list:*)",
+      "Bash(python3 -c \"import qrcode; print\\(''qrcode available''\\)\")",
+      "Bash(ls /Users/robschoen/Dropbox/CC/JVS/public/qr*)",
+      "Read(//private/tmp/**)"
     ]
   }
 }

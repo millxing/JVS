@@ -59,7 +59,7 @@ export default function Accomplishments() {
           <div className="max-w-3xl mx-auto">
             <div className="rounded-2xl overflow-hidden">
               <img
-                src="/JVS/sb_upscaled.png"
+                src="/sb_upscaled.png"
                 alt="Brookline Select Board in session"
                 className="w-full h-auto"
               />
@@ -170,7 +170,7 @@ export default function Accomplishments() {
             <div style={{ width: "60%" }}>
               <div className="rounded-2xl overflow-hidden">
                 <img
-                  src="/JVS/ribbon.png"
+                  src="/ribbon.png"
                   alt="Ribbon cutting ceremony"
                   className="w-full h-auto"
                 />
@@ -182,7 +182,7 @@ export default function Accomplishments() {
             <div style={{ width: "31.25%" }}>
               <div className="rounded-2xl overflow-hidden">
                 <img
-                  src="/JVS/turkey.png"
+                  src="/turkey.png"
                   alt="Turkey distribution event"
                   className="w-full h-auto"
                 />

@@ -101,7 +101,7 @@ export default function CallToAction() {
           <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-8">
             <div className="rounded-2xl overflow-hidden md:w-1/2 shrink-0">
               <img
-                src="/JVS/tavern_upscaled.png"
+                src="/tavern_upscaled.png"
                 alt="Campaign event at Washington Square Tavern"
                 className="w-full h-auto"
               />

@@ -42,7 +42,7 @@ export default function Hero() {
         <div className="animate-fade-in-up mb-6">
           <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden border-4 border-white/20 shadow-lg shadow-black/20 hover:border-gold/50 transition-all duration-500">
             <img
-              src="/JVS/jvs2.png"
+              src="/jvs2.png"
               alt="John VanScoyoc"
               className="w-full h-full object-cover"
             />

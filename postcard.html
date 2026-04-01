@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VanScoyoc Postcard — 5x7</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B3A5C;
+    --gold: #C8952E;
+    --cream: #FAF7F2;
+    --sage: #7A9E7E;
+    --warm-gray: #6B6560;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 60px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Landscape: 7" wide x 5" tall → 980px x 700px on screen */
+  .postcard {
+    width: 980px;
+    height: 700px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2), 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  /* ============================================
+     FRONT SIDE
+     ============================================ */
+  .front {
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 60px;
+    text-align: center;
+  }
+
+  .front-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gold-rule {
+    width: 140px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 36px;
+  }
+
+  .gold-rule-bottom {
+    width: 140px;
+    height: 2px;
+    background: var(--gold);
+    margin-top: 36px;
+  }
+
+  .re-elect {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    margin-bottom: 14px;
+  }
+
+  .candidate-name {
+    font-family: 'Merriweather', serif;
+    font-size: 68px;
+    font-weight: 900;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .candidate-name-first {
+    font-family: 'Merriweather', serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.1;
+  }
+
+  .gold-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .gold-divider-line {
+    width: 70px;
+    height: 1.5px;
+    background: var(--gold);
+  }
+
+  .gold-divider-diamond {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+
+  .tagline {
+    font-family: 'Merriweather', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--cream);
+    letter-spacing: 4px;
+    margin-bottom: 28px;
+  }
+
+  .office {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--sage);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .vote-date {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 2px;
+    opacity: 0.9;
+  }
+
+  /* ============================================
+     BACK SIDE
+     ============================================ */
+  .back {
+    background: var(--cream);
+    display: flex;
+    flex-direction: row;
+  }
+
+  /* Left content area */
+  .back-left {
+    width: 490px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  /* Photo + name banner */
+  .photo-banner {
+    display: flex;
+    align-items: stretch;
+    background: var(--navy);
+    height: 220px;
+  }
+
+  .headshot {
+    width: 190px;
+    height: 220px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .headshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .name-banner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 24px;
+  }
+
+  .name-banner-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 6px;
+  }
+
+  .name-banner-name {
+    font-family: 'Merriweather', serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--cream);
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+
+  .name-banner-office {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--sage);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* Endorsements section */
+  .endorsements-section {
+    padding: 24px 28px 20px 28px;
+    flex: 1;
+  }
+
+  .endorsements-header {
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2.5px solid var(--gold);
+    display: inline-block;
+  }
+
+  .endorsement-columns {
+    display: flex;
+    gap: 24px;
+  }
+
+  .endorsement-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .endorsement-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--warm-gray);
+    line-height: 1.4;
+    padding-left: 14px;
+    position: relative;
+  }
+
+  .endorsement-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 4px;
+    height: 4px;
+    background: var(--sage);
+    border-radius: 50%;
+  }
+
+  .endorsement-name {
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .endorsement-title {
+    color: var(--warm-gray);
+  }
+
+  /* QR + website row */
+  .qr-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 28px 0 28px;
+    border-top: 1px solid #e0dcd6;
+  }
+
+  .qr-box {
+    width: 110px;
+    height: 110px;
+    background: white;
+    border: 2px solid var(--navy);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .qr-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .qr-placeholder {
+    font-size: 9px;
+    color: #999;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .qr-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .qr-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: var(--navy);
+    font-weight: 700;
+  }
+
+  .qr-url {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--warm-gray);
+  }
+
+  .qr-vote {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-top: 4px;
+  }
+
+  /* Disclaimer */
+  .disclaimer {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #a09a94;
+    text-align: left;
+    padding: 16px 28px 20px;
+  }
+
+  /* Right mailing area */
+  .back-right {
+    width: 490px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    padding: 28px 32px 40px 32px;
+    border-left: 1px solid #d0ccc6;
+  }
+
+  .mailing-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .return-address {
+    font-family: 'Inter', sans-serif;
+    font-size: 16.5px;
+    color: var(--warm-gray);
+    line-height: 1.5;
+  }
+
+  .stamp-box {
+    width: 84px;
+    height: 64px;
+    border: 1.5px solid #bbb;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .stamp-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 8px;
+    color: #aaa;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+  }
+
+  .address-lines {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 20px 0 48px;
+    margin-top: auto;
+    flex: 1;
+    max-height: 350px;
+  }
+
+  .address-line {
+    border-bottom: 1px solid #c0bbb5;
+    height: 1px;
+  }
+
+  /* Print styles */
+  @media print {
+    body {
+      background: white;
+      padding: 0;
+      gap: 0;
+    }
+    .label { display: none; }
+    .card-wrapper { margin: 0; }
+    .postcard {
+      box-shadow: none;
+      width: 7in;
+      height: 5in;
+      page-break-after: always;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- FRONT SIDE -->
+<div class="card-wrapper">
+  <div class="label">Front Side</div>
+  <div class="postcard front">
+    <div class="front-inner">
+      <div class="gold-rule"></div>
+      <div class="re-elect">Re-Elect</div>
+      <div class="candidate-name-first">John</div>
+      <div class="candidate-name">VanScoyoc</div>
+      <div class="gold-divider">
+        <div class="gold-divider-line"></div>
+        <div class="gold-divider-diamond"></div>
+        <div class="gold-divider-line"></div>
+      </div>
+      <div class="tagline">Experience. Independence. Brookline.</div>
+      <div class="office">Brookline Select Board</div>
+      <div class="vote-date">Election Day: May 5, 2026</div>
+      <div class="gold-rule-bottom"></div>
+    </div>
+  </div>
+</div>
+
+<!-- BACK SIDE -->
+<div class="card-wrapper">
+  <div class="label">Back Side</div>
+  <div class="postcard back">
+    <!-- Left Content Half -->
+    <div class="back-left">
+      <!-- Photo + Name Banner -->
+      <div class="photo-banner">
+        <div class="headshot">
+          <img src="public/jvs2.png" alt="John VanScoyoc">
+        </div>
+        <div class="name-banner">
+          <div class="name-banner-label">Re-Elect</div>
+          <div class="name-banner-name">John<br>VanScoyoc</div>
+          <div class="name-banner-office">Brookline Select Board</div>
+        </div>
+      </div>
+
+      <!-- Endorsements -->
+      <div class="endorsements-section">
+        <div class="endorsements-header">Early Endorsements</div>
+        <div class="endorsement-columns">
+          <div class="endorsement-col">
+            <div class="endorsement-item">
+              <span class="endorsement-name">Bernard Greene,</span>
+              <span class="endorsement-title"> Select Board Chair</span>
+            </div>
+            <div class="endorsement-item">
+              <span class="endorsement-name">David Pearlman,</span>
+              <span class="endorsement-title"> Select Board Vice Chair</span>
+            </div>
+            <div class="endorsement-item">
+              <span class="endorsement-name">Paul Warren,</span>
+              <span class="endorsement-title"> Select Board</span>
+            </div>
+            <div class="endorsement-item">
+              <span class="endorsement-name">Michael Merrill</span>
+              <span class="endorsement-title"> (Select Board 1990-1996, 2004-2007)</span>
+            </div>
+            <div class="endorsement-item">
+              <span class="endorsement-name">Skip Sesling</span>
+              <span class="endorsement-title"> (Select Board, 1984-1992)</span>
+            </div>
+          </div>
+          <div class="endorsement-col">
+            <div class="endorsement-item">
+              <span class="endorsement-name">Robert Weintraub,</span>
+              <span class="endorsement-title"> School Committee</span>
+            </div>
+            <div class="endorsement-item">
+              <span class="endorsement-name">Carolyn Thall,</span>
+              <span class="endorsement-title"> School Committee</span>
+            </div>
+            <div class="endorsement-item">
+              <span class="endorsement-name">Danna Perry,</span>
+              <span class="endorsement-title"> School Committee</span>
+            </div>
+            <div class="endorsement-item">
+              <span class="endorsement-name">Jesse Hefter,</span>
+              <span class="endorsement-title"> School Committee</span>
+            </div>
+            <div class="endorsement-item">
+              <span class="endorsement-name">Val Frias,</span>
+              <span class="endorsement-title"> School Committee</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QR Code + Website -->
+      <div class="qr-row">
+        <div class="qr-box">
+          <img src="public/qrcode.png" alt="QR Code">
+        </div>
+        <div class="qr-info">
+          <div class="qr-label">JohnVanScoyoc.com</div>
+          <div class="qr-url">Learn more about John's record</div>
+          <div class="qr-vote">Vote May 5, 2026</div>
+        </div>
+      </div>
+
+      <div class="disclaimer">Paid for by the Committee to Elect John VanScoyoc</div>
+    </div>
+
+    <!-- Right Mailing Half -->
+    <div class="back-right">
+      <div class="mailing-top">
+        <div class="return-address">
+          Committee to Elect John VanScoyoc<br>
+          307 Reservoir Rd.<br>
+          Brookline, MA 02467
+        </div>
+        <div class="stamp-box">
+          <div class="stamp-text">Place<br>Stamp<br>Here</div>
+        </div>
+      </div>
+      <div class="address-lines">
+        <div class="address-line"></div>
+        <div class="address-line"></div>
+        <div class="address-line"></div>
+        <div class="address-line"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

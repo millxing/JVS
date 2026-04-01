@@ -25,7 +25,7 @@ export default function About() {
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                 <img
-                  src="/JVS/family.png"
+                  src="/family.png"
                   alt="The VanScoyoc family in Islesboro, Maine, 2022"
                   className="w-full h-full object-cover"
                 />
@@ -66,7 +66,7 @@ export default function About() {
           <div className="max-w-md mx-auto">
             <div className="rounded-2xl overflow-hidden">
               <img
-                src="/JVS/family2.png"
+                src="/family2.png"
                 alt="John's grandchildren"
                 className="w-full h-auto"
               />
@@ -116,7 +116,7 @@ export default function About() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden">
                 <img
-                  src="/JVS/profession.png"
+                  src="/profession.png"
                   alt="John's career in journalism"
                   className="w-full h-auto"
                 />
@@ -132,7 +132,7 @@ export default function About() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden">
                 <img
-                  src="/JVS/memorial.png"
+                  src="/memorial.png"
                   alt="John at a community event in Brookline"
                   className="w-full h-auto"
                 />
