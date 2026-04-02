@@ -84,7 +84,7 @@ export default function About() {
               <div className="space-y-4 text-warm-gray leading-relaxed">
                 <p>
                   In 2018, I retired after 23 years as a producer of nightly
-                  news/talk programs for New England Cable News / NBC10 Boston. I
+                  news / talk programs for New England Cable News / NBC10 Boston. I
                   was honored to work with some notable Boston TV names: most
                   recently, Sue O&apos;Connell (&ldquo;The Take&rdquo; host).
                   Prior to Sue there was Jim Braude

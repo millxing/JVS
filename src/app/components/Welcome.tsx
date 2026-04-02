@@ -25,7 +25,7 @@ export default function Welcome() {
             </p>
             <p>
               <strong className="text-navy">
-                It&apos;s now official. Three candidates will vye
+                It&apos;s now official. Three candidates will vie
               </strong>{" "}
               for two seats on the Select Board. Having been elected in 2020 and
               again in 2023 (with 6,000+ votes!) I&apos;m looking forward to

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export function useCountUp(end: number, duration = 1500) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(end);
   const ref = useRef<HTMLSpanElement>(null);
   const hasAnimated = useRef(false);
 
@@ -15,6 +15,7 @@ export function useCountUp(end: number, duration = 1500) {
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated.current) {
           hasAnimated.current = true;
+          setCount(0);
           const start = performance.now();
 
           const animate = (now: number) => {
