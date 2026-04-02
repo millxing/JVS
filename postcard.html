@@ -6,6 +6,15 @@
 <title>VanScoyoc Postcard — 5x7</title>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  /*
+   * USPS 5x7 Postcard — pixel scale: 140px per inch
+   * Finished size: 7" x 5" = 980px x 700px
+   * Safety inset: ~0.4" = 58px (all text inside this)
+   * Barcode clearance: 0.625" = 88px (bottom strip, full width)
+   * Mailing address zone: 3.75" = 525px (from right edge)
+   * Bleed (for print file only): 0.125" added by printer
+   */
+
   :root {
     --navy: #1B3A5C;
     --gold: #C8952E;
@@ -22,9 +31,24 @@
     flex-direction: column;
     align-items: center;
     padding: 40px 20px;
-    gap: 60px;
+    gap: 40px;
     font-family: 'Inter', sans-serif;
   }
+
+  /* Toggle controls */
+  .controls {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .controls label { cursor: pointer; user-select: none; }
 
   .label {
     font-family: 'Inter', sans-serif;
@@ -41,13 +65,109 @@
     align-items: center;
   }
 
-  /* Landscape: 7" wide x 5" tall → 980px x 700px on screen */
+  /* 5x7 finished size */
   .postcard {
     width: 980px;
     height: 700px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0,0,0,0.2), 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  /* ============================================
+     USPS GUIDE OVERLAY (toggled via checkbox)
+     ============================================ */
+  .usps-guides {
+    display: none;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 100;
+  }
+  #guide-toggle:checked ~ .card-wrapper .usps-guides {
+    display: block;
+  }
+
+  /* Safety zone — blue dashed, ~0.4" inset */
+  .guide-safety {
+    position: absolute;
+    top: 58px; left: 58px;
+    width: 864px; height: 584px; /* 980-116, 700-116 */
+    border: 1.5px dashed rgba(0,100,255,0.5);
+  }
+  .guide-label-safety {
+    position: absolute;
+    top: 44px; left: 60px;
+    font: 9px/1 'Inter', sans-serif;
+    color: rgba(0,100,255,0.5);
+  }
+
+  /* Barcode clearance — bottom 88px, full width */
+  .guide-barcode {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 980px; height: 88px;
+    background: rgba(100,180,255,0.2);
+    border-top: 1.5px dashed rgba(100,180,255,0.7);
+  }
+  .guide-barcode::after {
+    content: 'BARCODE CLEARANCE (0.625")';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font: 11px/1 'Inter', sans-serif;
+    color: rgba(70,140,220,0.8);
+  }
+
+  /* Mailing address zone — 3.75" from right, above barcode */
+  .guide-mail-zone {
+    position: absolute;
+    top: 0; right: 0;
+    width: 525px;
+    height: 612px; /* 700 - 88 barcode */
+    background: rgba(180,180,180,0.12);
+    border-left: 1.5px dashed rgba(150,150,150,0.5);
+  }
+  .guide-mail-zone::after {
+    content: 'MAILING ADDRESS ZONE (3.75" wide)';
+    position: absolute;
+    top: 55%; left: 50%;
+    transform: translate(-50%, -50%);
+    font: 11px/1 'Inter', sans-serif;
+    color: rgba(130,130,130,0.6);
+  }
+
+  /* Return address area — top-left */
+  .guide-return {
+    position: absolute;
+    top: 0; left: 0;
+    width: 455px; height: 180px;
+    background: rgba(255,240,150,0.2);
+    border: 1px dashed rgba(200,180,50,0.5);
+  }
+  .guide-return::after {
+    content: 'RETURN ADDRESS';
+    position: absolute;
+    top: 8px; left: 10px;
+    font: 10px/1 'Inter', sans-serif;
+    color: rgba(180,160,50,0.7);
+  }
+
+  /* Indicia — top-right corner */
+  .guide-indicia {
+    position: absolute;
+    top: 0; right: 0;
+    width: 160px; height: 120px;
+    background: rgba(180,180,180,0.25);
+    border: 1px dashed rgba(150,150,150,0.6);
+  }
+  .guide-indicia::after {
+    content: 'INDICIA';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font: 10px/1 'Inter', sans-serif;
+    color: rgba(150,150,150,0.7);
   }
 
   /* ============================================
@@ -59,7 +179,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px 60px;
+    /* Safety zone = 58px; padding must exceed that */
+    padding: 65px 70px;
     text-align: center;
   }
 
@@ -164,13 +285,20 @@
   .back {
     background: var(--cream);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
 
-  /* Left content area */
+  /* Main content area — above the barcode zone */
+  .back-main {
+    display: flex;
+    flex-direction: row;
+    height: 612px; /* 700 - 88 barcode clearance */
+    padding: 58px 0 58px 58px; /* safety inset: top, bottom, left */
+  }
+
+  /* Left content area — must stay within left side (outside mailing zone) */
   .back-left {
-    width: 490px;
-    height: 700px;
+    width: 397px; /* 455 - 58 safety inset */
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -182,12 +310,12 @@
     display: flex;
     align-items: stretch;
     background: var(--navy);
-    height: 220px;
+    height: 185px;
   }
 
   .headshot {
-    width: 190px;
-    height: 220px;
+    width: 160px;
+    height: 185px;
     overflow: hidden;
     flex-shrink: 0;
   }
@@ -204,7 +332,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 20px 24px;
+    padding: 20px 20px;
   }
 
   .name-banner-label {
@@ -219,7 +347,7 @@
 
   .name-banner-name {
     font-family: 'Merriweather', serif;
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 900;
     color: var(--cream);
     line-height: 1.15;
@@ -236,39 +364,32 @@
 
   /* Endorsements section */
   .endorsements-section {
-    padding: 24px 28px 20px 28px;
-    flex: 1;
+    padding: 20px 28px 16px 28px;
   }
 
   .endorsements-header {
     font-family: 'Merriweather', serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     color: var(--navy);
-    margin-bottom: 14px;
-    padding-bottom: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
     border-bottom: 2.5px solid var(--gold);
     display: inline-block;
   }
 
-  .endorsement-columns {
-    display: flex;
-    gap: 24px;
-  }
-
-  .endorsement-col {
-    flex: 1;
+  .endorsement-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
   }
 
   .endorsement-item {
     font-family: 'Inter', sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     color: var(--warm-gray);
-    line-height: 1.4;
-    padding-left: 14px;
+    line-height: 1.35;
+    padding-left: 12px;
     position: relative;
   }
 
@@ -293,17 +414,28 @@
   }
 
   /* QR + website row */
+  .bottom-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .qr-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
   .qr-row {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 24px 28px 0 28px;
-    border-top: 1px solid #e0dcd6;
+    gap: 14px;
+    padding: 0 20px;
   }
 
   .qr-box {
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
     background: white;
     border: 2px solid var(--navy);
     border-radius: 4px;
@@ -320,56 +452,48 @@
     object-fit: contain;
   }
 
-  .qr-placeholder {
-    font-size: 9px;
-    color: #999;
-    text-align: center;
-    line-height: 1.2;
-  }
-
   .qr-info {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px;
   }
 
   .qr-label {
     font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-size: 14px;
     color: var(--navy);
     font-weight: 700;
   }
 
   .qr-url {
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: 11px;
     color: var(--warm-gray);
   }
 
   .qr-vote {
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 700;
     color: var(--gold);
-    margin-top: 4px;
+    margin-top: 2px;
   }
 
-  /* Disclaimer */
+  /* Disclaimer — sits at bottom of left column */
   .disclaimer {
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     color: #a09a94;
     text-align: left;
-    padding: 16px 28px 20px;
+    padding: 8px 20px;
   }
 
-  /* Right mailing area */
+  /* Right mailing area — 3.75" = 525px */
   .back-right {
-    width: 490px;
-    height: 700px;
+    width: 525px;
     display: flex;
     flex-direction: column;
-    padding: 28px 32px 40px 32px;
+    padding: 0 58px 0 24px; /* right side gets 58px safety inset */
     border-left: 1px solid #d0ccc6;
   }
 
@@ -387,8 +511,8 @@
   }
 
   .stamp-box {
-    width: 84px;
-    height: 64px;
+    width: 100px;
+    height: 72px;
     border: 1.5px solid #bbb;
     border-radius: 2px;
     display: flex;
@@ -411,15 +535,22 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding: 0 20px 0 48px;
+    padding: 0 16px 0 44px;
     margin-top: auto;
     flex: 1;
-    max-height: 350px;
+    max-height: 320px;
   }
 
   .address-line {
     border-bottom: 1px solid #c0bbb5;
     height: 1px;
+  }
+
+  /* Barcode clearance zone — 0.625" = 88px, MUST remain empty */
+  .barcode-zone {
+    height: 88px;
+    width: 100%;
+    flex-shrink: 0;
   }
 
   /* Print styles */
@@ -429,7 +560,7 @@
       padding: 0;
       gap: 0;
     }
-    .label { display: none; }
+    .label, .controls { display: none; }
     .card-wrapper { margin: 0; }
     .postcard {
       box-shadow: none;
@@ -437,15 +568,27 @@
       height: 5in;
       page-break-after: always;
     }
+    .usps-guides { display: none !important; }
   }
 </style>
 </head>
 <body>
 
+<!-- USPS Guide Toggle -->
+<div class="controls">
+  <input type="checkbox" id="guide-toggle">
+  <label for="guide-toggle">Show USPS Guide Overlay</label>
+</div>
+
 <!-- FRONT SIDE -->
 <div class="card-wrapper">
-  <div class="label">Front Side</div>
+  <div class="label">Front Side (5" x 7")</div>
   <div class="postcard front">
+    <!-- USPS Guides -->
+    <div class="usps-guides">
+      <div class="guide-safety"></div>
+      <div class="guide-label-safety">SAFETY ZONE (0.25")</div>
+    </div>
     <div class="front-inner">
       <div class="gold-rule"></div>
       <div class="re-elect">Re-Elect</div>
@@ -466,27 +609,38 @@
 
 <!-- BACK SIDE -->
 <div class="card-wrapper">
-  <div class="label">Back Side</div>
+  <div class="label">Back Side — Mailing (5" x 7")</div>
   <div class="postcard back">
-    <!-- Left Content Half -->
-    <div class="back-left">
-      <!-- Photo + Name Banner -->
-      <div class="photo-banner">
-        <div class="headshot">
-          <img src="public/jvs2.png" alt="John VanScoyoc">
-        </div>
-        <div class="name-banner">
-          <div class="name-banner-label">Re-Elect</div>
-          <div class="name-banner-name">John<br>VanScoyoc</div>
-          <div class="name-banner-office">Brookline Select Board</div>
-        </div>
-      </div>
+    <!-- USPS Guides -->
+    <div class="usps-guides">
+      <div class="guide-safety"></div>
+      <div class="guide-barcode"></div>
+      <div class="guide-mail-zone"></div>
+      <div class="guide-return"></div>
+      <div class="guide-indicia"></div>
+      <div class="guide-label-safety">SAFETY ZONE (0.25")</div>
+    </div>
 
-      <!-- Endorsements -->
-      <div class="endorsements-section">
-        <div class="endorsements-header">Early Endorsements</div>
-        <div class="endorsement-columns">
-          <div class="endorsement-col">
+    <!-- Main content area (above barcode zone) -->
+    <div class="back-main">
+      <!-- Left Content Half -->
+      <div class="back-left">
+        <!-- Photo + Name Banner -->
+        <div class="photo-banner">
+          <div class="headshot">
+            <img src="public/jvs2.png" alt="John VanScoyoc">
+          </div>
+          <div class="name-banner">
+            <div class="name-banner-label">Re-Elect</div>
+            <div class="name-banner-name">John<br>VanScoyoc</div>
+            <div class="name-banner-office">Brookline Select Board</div>
+          </div>
+        </div>
+
+        <!-- Endorsements — single column to fit narrower left area -->
+        <div class="endorsements-section">
+          <div class="endorsements-header">170+ Endorsers</div>
+          <div class="endorsement-list">
             <div class="endorsement-item">
               <span class="endorsement-name">Bernard Greene,</span>
               <span class="endorsement-title"> Select Board Chair</span>
@@ -507,8 +661,6 @@
               <span class="endorsement-name">Skip Sesling</span>
               <span class="endorsement-title"> (Select Board, 1984-1992)</span>
             </div>
-          </div>
-          <div class="endorsement-col">
             <div class="endorsement-item">
               <span class="endorsement-name">Robert Weintraub,</span>
               <span class="endorsement-title"> School Committee</span>
@@ -531,42 +683,42 @@
             </div>
           </div>
         </div>
+
+        <!-- Bottom: QR centered in remaining space, disclaimer pinned at bottom -->
+        <div class="bottom-section">
+          <div class="qr-wrapper">
+            <div class="qr-row">
+              <div class="qr-box">
+                <img src="public/qrcode.png" alt="QR Code">
+              </div>
+              <div class="qr-info">
+                <div class="qr-label">JohnVanScoyoc.com</div>
+                <div class="qr-url">Learn more about John's record</div>
+                <div class="qr-vote">Vote May 5, 2026</div>
+              </div>
+            </div>
+          </div>
+          <div class="disclaimer">Paid for by the Committee to Elect John VanScoyoc</div>
+        </div>
       </div>
 
-      <!-- QR Code + Website -->
-      <div class="qr-row">
-        <div class="qr-box">
-          <img src="public/qrcode.png" alt="QR Code">
-        </div>
-        <div class="qr-info">
-          <div class="qr-label">JohnVanScoyoc.com</div>
-          <div class="qr-url">Learn more about John's record</div>
-          <div class="qr-vote">Vote May 5, 2026</div>
+      <!-- Right Mailing Half (3.75" = 525px) -->
+      <div class="back-right">
+        <div class="mailing-top">
+          <div class="return-address">
+            Committee to Elect John VanScoyoc<br>
+            307 Reservoir Rd.<br>
+            Brookline, MA 02467
+          </div>
+          <div class="stamp-box">
+            <div class="stamp-text">Place<br>Stamp<br>Here</div>
+          </div>
         </div>
       </div>
-
-      <div class="disclaimer">Paid for by the Committee to Elect John VanScoyoc</div>
     </div>
 
-    <!-- Right Mailing Half -->
-    <div class="back-right">
-      <div class="mailing-top">
-        <div class="return-address">
-          Committee to Elect John VanScoyoc<br>
-          307 Reservoir Rd.<br>
-          Brookline, MA 02467
-        </div>
-        <div class="stamp-box">
-          <div class="stamp-text">Place<br>Stamp<br>Here</div>
-        </div>
-      </div>
-      <div class="address-lines">
-        <div class="address-line"></div>
-        <div class="address-line"></div>
-        <div class="address-line"></div>
-        <div class="address-line"></div>
-      </div>
-    </div>
+    <!-- Barcode clearance zone (0.625") — MUST remain empty -->
+    <div class="barcode-zone"></div>
   </div>
 </div>
 
