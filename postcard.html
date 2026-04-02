@@ -84,7 +84,7 @@
     pointer-events: none;
     z-index: 100;
   }
-  #guide-toggle:checked ~ .card-wrapper .usps-guides {
+  body.show-guides .usps-guides {
     display: block;
   }
 
@@ -722,5 +722,10 @@
   </div>
 </div>
 
+<script>
+  document.getElementById('guide-toggle').addEventListener('change', function() {
+    document.body.classList.toggle('show-guides', this.checked);
+  });
+</script>
 </body>
 </html>

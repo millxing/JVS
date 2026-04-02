@@ -23,24 +23,32 @@ const platforms = [
         whole.{" "}
         <strong className="text-navy">Commercial tax revenue</strong> such as
         Chestnut Hill West promises is crucial. So is{" "}
-        <strong className="text-navy">listening and responding</strong> to the
-        residents of Sheafe and Heath streets and Woodland Road who will be
+        <strong className="text-navy">listening and responding</strong>{" "}to the
+        residents of Sheaff and Heath Streets and Woodland Road who will be
         impacted by a surge in development on the Office Park site. I&apos;ve met
         with residents AND developers to get the best results for both. That
         work will continue all the way to Town Meeting.
       </>,
       <>
-        As for putting a tax cap override of some $19M+ on the ballot, I&apos;m
-        committed to{" "}
-        <strong className="text-navy">protecting our services</strong> (public
-        safety, schools, parks, recreation, libraries, etc.) &mdash; and equally
-        committed to{" "}
-        <strong className="text-navy">
-          affordability for taxpayers (including tenants through their rents)
-        </strong>{" "}
-        who only have so much more to give.{" "}
-        <strong className="text-navy">Finding the sweet spot</strong> (enough
-        money for services, with a bearable tax pinch for voters) is my pledge.
+        <span className="block mb-2">As for the override question that will appear on the May 5 ballot:</span>
+        <ul className="list-disc pl-5 space-y-2 text-warm-gray">
+          <li>
+            I believe &mdash; and advocated to the Select Board &mdash; that the May 5 override question be framed{" "}
+            <strong className="text-navy">as a choice</strong> of either the{" "}
+            <strong className="text-navy">full-request</strong> amount ($23.25 million) or a{" "}
+            <strong className="text-navy">spending-restraint</strong> amount (85% of full-request). My proposal failed to win a majority vote on the Select Board.
+          </li>
+          <li>
+            I remain committed to <strong className="text-navy">choice</strong> (more than one spending option) on future override ballots.
+          </li>
+          <li>
+            Protecting services <strong className="text-navy">and</strong>{" "}
+            spending restraint are equally important goals. Both must be recognized when framing override ballots.
+          </li>
+          <li>
+            Our ultimate goal must be <strong className="text-navy">sustainable budget growth</strong>{" "}<strong className="text-navy">without endless overrides</strong>. This will require bringing our personnel costs (wages, salaries, and benefits) in line with Brookline&apos;s average of 3%-3.5% annual increase in revenues.
+          </li>
+        </ul>
       </>,
     ],
   },
@@ -75,7 +83,7 @@ const platforms = [
         <strong className="text-navy">
           Create a &ldquo;tax pinch&rdquo; test for future overrides
         </strong>{" "}
-        (after FY27). In short, budget needs <em>AND</em> tax burdens should
+        (after FY27). In short, budget needs and tax burdens should
         factor into the calculation of overrides. There&apos;s no perfect formula
         &mdash; but seeking one is worth the effort. (And voters will let us
         know if we get it wrong.)

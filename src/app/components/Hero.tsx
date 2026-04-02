@@ -66,9 +66,9 @@ export default function Hero() {
 
         {/* Subheadline */}
         <p className="animate-fade-in-up animation-delay-400 text-xl md:text-2xl text-white/80 font-light mb-4 max-w-2xl mx-auto">
-          Experience. Independence. Brookline.
+          Experience. Independence.
         </p>
-        <p className="animate-fade-in-up animation-delay-400 text-base text-white/60 mb-10 max-w-xl mx-auto">
+        <p className="animate-fade-in-up animation-delay-400 text-xl md:text-2xl text-white/60 mb-10 max-w-xl mx-auto">
           Brookline Select Board
         </p>
 
@@ -76,7 +76,7 @@ export default function Hero() {
         <div className="animate-fade-in-up animation-delay-400 flex justify-center gap-12 md:gap-16 mb-12">
           <StatCounter end={6000} suffix="+" label="Votes in 2023" />
           <StatCounter end={40} suffix="+" label="Years in Brookline" />
-          <StatCounter end={5} suffix="" label="Years on Select Board" />
+          <StatCounter end={6} suffix="" label="Years on Select Board" />
         </div>
 
         {/* CTAs */}
