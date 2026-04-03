@@ -33,7 +33,7 @@ const platforms = [
         <span className="block mb-2">As for the override question that will appear on the May 5 ballot:</span>
         <ul className="list-disc pl-5 space-y-2 text-warm-gray">
           <li>
-            I believe &mdash; and advocated to the Select Board &mdash; that the May 5 override question be framed{" "}
+            I advocated that the May 5 override question be framed{" "}
             <strong className="text-navy">as a choice</strong> of either the{" "}
             <strong className="text-navy">full-request</strong> amount ($23.25 million) or a{" "}
             <strong className="text-navy">spending-restraint</strong> amount (85% of full-request). My proposal failed to win a majority vote on the Select Board.
