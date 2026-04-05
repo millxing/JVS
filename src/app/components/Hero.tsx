@@ -13,12 +13,17 @@ function StatCounter({
 }) {
   const { ref, count } = useCountUp(end, 1800);
   return (
-    <div className="text-center">
-      <span ref={ref} className="block font-serif text-3xl md:text-4xl font-bold text-white">
+    <div className="w-[9rem] md:w-[11rem] min-h-[4.75rem] md:min-h-[5.5rem] text-center">
+      <span
+        ref={ref}
+        className="block font-serif text-3xl md:text-4xl font-bold text-white tabular-nums"
+      >
         {count.toLocaleString()}
         {suffix}
       </span>
-      <span className="text-white/60 text-sm">{label}</span>
+      <span className="block min-h-[2.5rem] text-white/60 text-sm leading-snug">
+        {label}
+      </span>
     </div>
   );
 }

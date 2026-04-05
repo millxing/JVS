@@ -8,7 +8,7 @@ const featuredEndorsers = [
   { name: "David Pearlman", title: "Select Board Vice Chair" },
   { name: "Paul Warren", title: "Select Board" },
   { name: "Michael Merrill", title: "Select Board 1990\u20131996, 2004\u20132007" },
-  { name: "Skip Sesling", title: "Select Board, 1984\u20131992" },
+  { name: "Skip Sesling", title: "Select Board, 1984\u20131990" },
   { name: "Robert Weintraub", title: "School Committee" },
   { name: "Carolyn Thall", title: "School Committee" },
   { name: "Danna Perry", title: "School Committee" },
@@ -41,7 +41,7 @@ const communityEndorsers = [
   "Joyce Jozwicki", "Barr Jozwicki", "Janice Kahn", "Ruth Kaplan",
   "Priscilla Karnovsky", "Kitty Kaufman", "Janet Kawada", "David King",
   "Kristine Knauf", "Geri Lambert", "Jonathan Lau", "Marian Lazar",
-  "Gerald Lazar", "Frederick Lebow", "David Lescohier", "Carol Levin",
+  "Gerald Lazar", "Frederick Lebow", "Stephen Ledbetter", "David Lescohier", "Carol Levin",
   "Bruce Levin", "Fred Levitan", "Alan Leviton", "Nancy Lew", "Ken Lewis",
   "Karen Livingston", "Pam Lodish", "Mark Lowenstein", "Richard Mai",
   "Carol Macbain", "Lucy Mack", "Linda Mancini", "Jon Margolis",
@@ -52,7 +52,7 @@ const communityEndorsers = [
   "Peggy Morrison", "Tom Mullin", "Terry Murphy", "Kendra O'Donnell",
   "Larry Onie", "John Parla", "Linda Olson Pehlke", "Danna Perry",
   "Alisa Plazonja", "Betsy Pollock", "Susan Podziba", "Luisa Raposo",
-  "Judy Reece", "Peter Richardson", "Pam Roberts", "Rosemarie Roque",
+  "Judy Reece", "Gleeson Rebello", "Peter Richardson", "Pam Roberts", "Rosemarie Roque",
   "Barry Rosen", "A. Joseph Ross", "Christine Rossell", "Stuart Rubinow",
   "Bonnie Sashin", "Cheryl Schaffer", "Jill Schiff", "Cathleen Schoen",
   "Robert Schoen", "John Seay", "Judy Selwyn", "Lee Selwyn",
@@ -78,7 +78,7 @@ export default function Endorsements() {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy mt-3">
               Trusted by Brookline Leaders
             </h2>
-            <p className="text-warm-gray mt-3 text-lg">170 endorsements and growing</p>
+            <p className="text-warm-gray mt-3 text-lg">172 endorsements and growing</p>
             <div className="w-16 h-1 bg-gold mx-auto mt-4 rounded-full" />
           </div>
         </ScrollReveal>
