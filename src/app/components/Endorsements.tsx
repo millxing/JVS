@@ -78,7 +78,7 @@ export default function Endorsements() {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy mt-3">
               Trusted by Brookline Leaders
             </h2>
-            <p className="text-warm-gray mt-3 text-lg">172 endorsements and growing</p>
+            <p className="text-warm-gray mt-3 text-lg">175 endorsements and growing</p>
             <div className="w-16 h-1 bg-gold mx-auto mt-4 rounded-full" />
           </div>
         </ScrollReveal>
