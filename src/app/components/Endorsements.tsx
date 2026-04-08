@@ -9,6 +9,7 @@ const featuredEndorsers = [
   { name: "Paul Warren", title: "Select Board" },
   { name: "Michael Merrill", title: "Select Board 1990\u20131996, 2004\u20132007" },
   { name: "Zvi (Skip) Sesling", title: "Select Board, 1984\u20131990" },
+  { name: "Richard Benka", title: "Select Board, 2008\u20132014" },
   { name: "Robert Weintraub", title: "School Committee" },
   { name: "Carolyn Thall", title: "School Committee" },
   { name: "Danna Perry", title: "School Committee" },
@@ -53,7 +54,7 @@ const communityEndorsers = [
   "Larry Onie", "John Parla", "Linda Olson Pehlke", "Danna Perry",
   "Alisa Plazonja", "Betsy Pollock", "Susan Podziba", "Luisa Raposo",
   "Judy Reece", "Gleeson Rebello", "Peter Richardson", "Pam Roberts", "Rosemarie Roque",
-  "Barry Rosen", "A. Joseph Ross", "Christine Rossell", "Stuart Rubinow",
+  "Barry Rosen", "A. Joseph Ross", "Jeffrey Ross", "Christine Rossell", "Stuart Rubinow",
   "Bonnie Sashin", "Cheryl Schaffer", "Jill Schiff", "Cathleen Schoen",
   "Robert Schoen", "John Seay", "Judy Selwyn", "Lee Selwyn",
   "Ronnie Shapiro", "Francis Shedd-Fisher", "Barbara Sherman",
@@ -78,7 +79,7 @@ export default function Endorsements() {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy mt-3">
               Trusted by Brookline Leaders
             </h2>
-            <p className="text-warm-gray mt-3 text-lg">175 endorsements and growing</p>
+            <p className="text-warm-gray mt-3 text-lg">177 endorsements and growing</p>
             <div className="w-16 h-1 bg-gold mx-auto mt-4 rounded-full" />
           </div>
         </ScrollReveal>
@@ -100,7 +101,7 @@ export default function Endorsements() {
           <div className="text-center">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="inline-flex items-center gap-2 text-navy font-semibold hover:text-gold transition-colors"
+              className="inline-flex items-center gap-2 text-[1.5rem] text-navy font-semibold hover:text-gold transition-colors"
             >
               {showAll
                 ? "Hide community endorsers"

@@ -78,7 +78,7 @@ export default function Hero() {
         </p>
 
         {/* Stats */}
-        <div className="animate-fade-in-up animation-delay-400 flex justify-center gap-12 md:gap-16 mb-12">
+        <div className="animate-fade-in-up animation-delay-400 flex justify-center gap-4 sm:gap-8 md:gap-16 mb-12">
           <StatCounter end={6000} suffix="+" label="Votes in 2023" />
           <StatCounter end={40} suffix="+" label="Years in Brookline" />
           <StatCounter end={6} suffix="" label="Years on Select Board" />
