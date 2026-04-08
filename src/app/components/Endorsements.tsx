@@ -26,7 +26,7 @@ const communityEndorsers = [
   "Jim Batchelor", "Clara Batchelor", "Jerry Berger", "Susan Berger",
   "Eileen Berger", "Michael Berger", "Ben Binbaum", "Peter Bleyleben",
   "Sara Salvo Blood", "Roger Blood", "Sam Botsford", "Edie Brickman",
-  "Pauline Hо Bупum", "Narcissa Campion", "Peggy Campion", "Tracy Clark", "Abby Coffin",
+  "Pauline Ho Byпum", "Narcissa Campion", "Peggy Campion", "Tracy Clark", "Abby Coffin",
   "Susan F Cohen", "Debby K Cohen", "George Cole", "Susan Helms Daley", "Susan Dechter",
   "John Dempsey", "Marie desJardins", "Murray Dewart", "Mary Dewart",
   "Dennis Dewitt", "John Doggett", "David Eisenberg", "Elton Elperin", "Tom Elwertowski",
