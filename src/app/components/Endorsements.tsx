@@ -14,7 +14,6 @@ const featuredEndorsers = [
   { name: "Carolyn Thall", title: "School Committee" },
   { name: "Danna Perry", title: "School Committee" },
   { name: "Jesse Hefter", title: "School Committee" },
-  { name: "Val Frias", title: "School Committee" },
   { name: "Liz Linder", title: "2025 Select Board candidate" },
   { name: "Kate Poverman", title: "Former Town Moderator" },
   { name: "Sandy Gadsby", title: "Former Town Moderator" },
@@ -66,6 +65,7 @@ const communityEndorsers = [
 
 export default function Endorsements() {
   const [showAll, setShowAll] = useState(false);
+  const endorsementCount = featuredEndorsers.length + communityEndorsers.length;
 
   return (
     <section id="endorsements" className="py-20 md:py-28 bg-warm-white">
@@ -79,7 +79,9 @@ export default function Endorsements() {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy mt-3">
               Trusted by Brookline Leaders
             </h2>
-            <p className="text-warm-gray mt-3 text-lg">177 endorsements and growing</p>
+            <p className="text-warm-gray mt-3 text-lg">
+              {endorsementCount} endorsement{endorsementCount === 1 ? "" : "s"} and growing
+            </p>
             <div className="w-16 h-1 bg-gold mx-auto mt-4 rounded-full" />
           </div>
         </ScrollReveal>
