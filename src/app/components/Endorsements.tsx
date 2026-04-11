@@ -58,7 +58,7 @@ const communityEndorsers = [
   "Robert Schoen", "John Seay", "Judy Selwyn", "Lee Selwyn",
   "Ronnie Shapiro", "Francis Shedd-Fisher", "Barbara Sherman",
   "John Sherman", "Ellen Shoner", "John Shreffler", "Felina Silver Robinson",
-  "Stanley Spiegel", "Alexandra Spingarn", "Molly Turlisch",
+  "Stanley Spiegel", "Alexandra Spingarn", "Charles Terrell", "Molly Turlisch",
   "Judith Vanderkay", "Barbara VanScoyoc", "Kathleen Vieweg",
   "Donnie Wolosenko", "Jerry Wolosenko", "Mark Zarrillo",
 ];

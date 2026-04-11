@@ -72,38 +72,16 @@
   }
   .all{
     flex:1 1 auto;
-    font-size:12px;
+    min-height:0;
+    font-size:13px;
     line-height:1.14;
     color:var(--muted);
-    column-count:1;
-    column-gap:0;
     font-weight:600;
     overflow:hidden;
     padding-top:2px;
   }
   .all span{
     break-inside:avoid;
-  }
-  .cta{
-    margin-top:16px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    align-items:center;
-    gap:16px;
-  }
-  .cta-text{
-    font-family:"Merriweather",serif;
-    font-size:24px;
-    line-height:1;
-    font-style:italic;
-    color:var(--accent);
-    text-align:center;
-  }
-  .cta img{
-    width:88px;
-    height:88px;
-    display:block;
-    justify-self:center;
   }
   @media print{
     body{background:#fff;padding:0}
@@ -121,10 +99,6 @@
     <h1>Thank you, Endorsers!</h1>
     <div class="featured" id="featured"></div>
     <div class="all" id="all"></div>
-    <div class="cta">
-      <div class="cta-text">Join the list!</div>
-      <img src="QRcode.png" alt="QR code to join the list">
-    </div>
   </div>
 </main>
 <script>
@@ -139,7 +113,6 @@
     ["Carolyn Thall", "School Committee"],
     ["Danna Perry", "School Committee"],
     ["Jesse Hefter", "School Committee"],
-    ["Val Frias", "School Committee"],
     ["Liz Linder", "2025 Select Board candidate"],
     ["Kate Poverman", "Former Town Moderator"],
     ["Sandy Gadsby", "Former Town Moderator"]
@@ -184,7 +157,7 @@
     ["Robert Schoen",""],["John Seay",""],["Judy Selwyn",""],["Lee Selwyn",""],
     ["Ronnie Shapiro",""],["Francis Shedd-Fisher",""],["Barbara Sherman",""],
     ["John Sherman",""],["Ellen Shoner",""],["John Shreffler",""],["Felina Silver Robinson",""],
-    ["Stanley Spiegel",""],["Alexandra Spingarn",""],["Molly Turlisch",""],
+    ["Stanley Spiegel",""],["Alexandra Spingarn",""],["Charles Terrell",""],["Molly Turlisch",""],
     ["Judith Vanderkay",""],["Barbara VanScoyoc",""],["Kathleen Vieweg",""],
     ["Donnie Wolosenko",""],["Jerry Wolosenko",""],["Mark Zarrillo",""]
   ];
@@ -195,11 +168,11 @@
   `).join("");
 
   const allEl = document.getElementById("all");
-  allEl.innerHTML = endorsers.map(([name, title], index) => {
+  allEl.insertAdjacentHTML("beforeend", endorsers.map(([name, title], index) => {
     const content = title ? `${name}, ${title}` : `${name}`;
     const suffix = index === endorsers.length - 1 ? "" : ",";
     return `<span>${content}${suffix}</span> `;
-  }).join("");
+  }).join(""));
 </script>
 </body>
 </html>
