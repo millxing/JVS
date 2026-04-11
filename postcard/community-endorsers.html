@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community Endorsers</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B3A5C;
+    --cream: #F0EBE1;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--cream);
+  }
+
+  body {
+    padding: 24px;
+  }
+
+  .element {
+    width: 585px;
+    min-height: 475px;
+    color: var(--navy);
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    line-height: 1.12;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+</style>
+</head>
+<body>
+  <div class="element" id="endorsers"></div>
+  <script>
+    const endorsers = [
+      "Nancy Adler", "Pat Ahlin", "Martina Albright", "Saralynn Allaire",
+      "Pamela Allara", "Scott Andersen", "Rosemary Ashby", "John Bassett",
+      "Jim Batchelor", "Clara Batchelor", "Carla Benka", "Jerry Berger", "Susan Berger",
+      "Eileen Berger", "Michael Berger", "Ben Binbaum", "Peter Bleyleben",
+      "Sara Salvo Blood", "Roger Blood", "Sam Botsford", "Edie Brickman",
+      "Pauline Ho Byпum", "Narcissa Campion", "Peggy Campion", "Tracy Clark", "Abby Coffin",
+      "Susan F Cohen", "Debby K Cohen", "George Cole", "Susan Helms Daley", "Susan Dechter",
+      "John Dempsey", "Marie desJardins", "Murray Dewart", "Mary Dewart",
+      "Dennis Dewitt", "John Doggett", "David Eisenberg", "Elton Elperin", "Tom Elwertowski",
+      "Elizabeth Erdman", "Sarah Ericsson", "Susan Erickson", "Anne Farrington",
+      "Chuck Farrington", "Jonathan Fine", "Marcia Fisch", "Julian Fisher",
+      "Dale Flecker", "Marion Freedman-Gurspan", "Anita Fritze",
+      "David Marc Goldstein", "Ellen Golde", "Bambi Good", "Ellen Goodman",
+      "Rhoda Goodwin", "Mark Gray", "Nathan Gunner", "Sally Guy",
+      "Benedicte Hallowell", "Rory Hallowell", "Casey Hatchett",
+      "Debbie Hatzieleftheriadis", "Gerard Hayes", "Barbara Hebert",
+      "John Hebert", "Robin Hennessey", "Carol Hillman", "Richard Houlihan", "Janice Houlihan", "Fran Hoy",
+      "Richard Mazandi Iseke", "Cerise Jacobs", "Nicholas Johnson",
+      "Joyce Jozwicki", "Barr Jozwicki", "Janice Kahn", "Ruth Kaplan",
+      "Priscilla Karnovsky", "Kitty Kaufman", "Janet Kawada", "David King",
+      "Kristine Knauf", "Geri Lambert", "Jonathan Lau", "Marian Lazar",
+      "Gerald Lazar", "Frederick Lebow", "Stephen Ledbetter", "David Lescohier", "Carol Levin",
+      "Bruce Levin", "Fred Levitan", "Alan Leviton", "Mark Levy", "Nancy Lew", "Ken Lewis",
+      "Karen Livingston", "Pam Lodish", "Mark Lowenstein", "Richard Mai",
+      "Carol Macbain", "Lucy Mack", "Linda Mancini", "Jon Margolis",
+      "Hugh Mattison", "Arlene Mattison", "Michael Maynard", "Chris McArdle",
+      "Colin McArdle", "Diana McClure", "John McCullough", "Eric McNulty",
+      "Steve Mead", "Letitia Mead", "Randolph Meiklejohn", "Robert Melzer",
+      "Dr Keith Merlin", "Judy Meyers", "Jessica Milhem", "Paul Hart Miller",
+      "Peggy Morrison", "Tom Mullin", "Terry Murphy", "Kendra O'Donnell",
+      "Larry Onie", "John Parla", "Linda Olson Pehlke", "Danna Perry",
+      "Alisa Plazonja", "Betsy Pollock", "Susan Podziba", "Luisa Raposo",
+      "Judy Reece", "Gleeson Rebello", "Peter Richardson", "Pam Roberts", "Rosemarie Roque",
+      "Barry Rosen", "A. Joseph Ross", "Jeffrey Ross", "Christine Rossell", "Stuart Rubinow",
+      "Bonnie Sashin", "Cheryl Schaffer", "Jill Schiff", "Cathleen Schoen",
+      "Robert Schoen", "John Seay", "Judy Selwyn", "Lee Selwyn",
+      "Ronnie Shapiro", "Francis Shedd-Fisher", "Barbara Sherman",
+      "John Sherman", "Ellen Shoner", "John Shreffler", "Felina Silver Robinson", "Diana Spiegel",
+      "Stanley Spiegel", "Alexandra Spingarn", "Charles Terrell", "Molly Turlisch",
+      "Judith Vanderkay", "Barbara VanScoyoc", "Kathleen Vieweg",
+      "Donnie Wolosenko", "Jerry Wolosenko", "Mark Zarrillo",
+    ];
+
+    const sortKey = (name) => {
+      const words = name.trim().split(/\s+/);
+      const lastName = words[words.length - 1]
+        .replace(/[^\p{L}\p{N}'-]/gu, "")
+        .toLowerCase();
+      const remainder = words.slice(0, -1).join(" ").toLowerCase();
+      return `${lastName} ${remainder}`;
+    };
+
+    const sortedEndorsers = [...endorsers].sort((a, b) => {
+      const keyA = sortKey(a);
+      const keyB = sortKey(b);
+      return keyA.localeCompare(keyB, undefined, { sensitivity: "base" });
+    });
+
+    document.getElementById("endorsers").textContent = sortedEndorsers.join(", ");
+  </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BFRG Text</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F0EBE1;
+    --navy: #1B3A5C;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    min-height: 100%;
+  }
+
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: var(--paper);
+    color: var(--navy);
+    font-family: "Avenir Next", "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .stage {
+    width: min(100vw, 1600px);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: clamp(32px, 6vw, 80px);
+  }
+
+  .wordmark {
+    width: min(100%, 1380px);
+    display: grid;
+    justify-items: center;
+    gap: clamp(10px, 1.2vw, 18px);
+  }
+
+  .headline {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: clamp(72px, 11vw, 172px);
+    line-height: 0.92;
+    letter-spacing: 0.055em;
+    color: var(--navy);
+  }
+
+  .subline {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: clamp(18px, 2.3vw, 38px);
+    line-height: 1;
+    letter-spacing: 0.2em;
+    color: var(--navy);
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  @media (max-width: 900px) {
+    .headline {
+      letter-spacing: 0.045em;
+    }
+
+    .subline {
+      letter-spacing: 0.14em;
+      line-height: 1.14;
+    }
+  }
+
+  @media print {
+    body,
+    .stage {
+      min-height: auto;
+      width: auto;
+      padding: 0.4in;
+      background: var(--paper);
+    }
+  }
+</style>
+</head>
+<body>
+  <main class="stage">
+    <section class="wordmark" aria-label="Brookline For Responsible Government text on cream background">
+      <h1 class="headline">Brookline</h1>
+      <p class="subline">For Responsible Government</p>
+    </section>
+  </main>
+</body>
+</html>

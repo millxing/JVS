@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You, Endorsers Portrait 02</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;0,900;1,700;1,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1b3a5c;
+    --cream: #faf7f2;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: #d7d2c8;
+    color: var(--navy);
+    font-family: "Inter", sans-serif;
+  }
+
+  .sheet {
+    width: 6in;
+    height: 9in;
+    background: var(--cream);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18), 0 2px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
+
+  .inner {
+    height: 100%;
+    padding: 24px 26px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    margin: 0 0 10px;
+    color: var(--navy);
+    font-family: "Merriweather", serif;
+    font-size: 44px;
+    line-height: 0.95;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    text-align: center;
+  }
+
+  .orgs {
+    margin: 0 0 14px;
+    color: var(--navy);
+    font-size: 12px;
+    line-height: 1.18;
+    font-weight: 800;
+    text-align: center;
+    text-transform: none;
+  }
+
+  .featured {
+    margin: 0 0 16px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 18px;
+  }
+
+  .featured-item {
+    color: var(--navy);
+    font-size: 10.5px;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+
+  .featured-item .name {
+    font-weight: 800;
+  }
+
+  .all {
+    flex: 1 1 auto;
+    min-height: 0;
+    color: var(--navy);
+    font-size: 9px;
+    line-height: 1.13;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    overflow: hidden;
+  }
+
+  .all span {
+    white-space: normal;
+  }
+
+  .footer {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 14px;
+  }
+
+  .cta {
+    color: var(--navy);
+    min-width: 0;
+    text-align: center;
+  }
+
+  .cta .join {
+    margin: 0;
+    font-family: "Merriweather", serif;
+    font-size: 31px;
+    line-height: 0.95;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+  }
+
+  .cta .email {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 500;
+  }
+
+  .qr {
+    width: 76px;
+    height: 76px;
+    padding: 4px;
+    border: 2px solid rgba(27, 58, 92, 0.22);
+    background: #fff;
+    flex: 0 0 auto;
+  }
+
+  .qr img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  @media print {
+    body {
+      padding: 0;
+      background: #fff;
+    }
+
+    .sheet {
+      box-shadow: none;
+    }
+  }
+
+  @media (max-width: 760px) {
+    body {
+      padding: 0;
+    }
+
+    .sheet {
+      width: min(100vw, 66.6667vh);
+      height: min(150vw, 100vh);
+      box-shadow: none;
+    }
+
+    .title {
+      font-size: clamp(32px, 7vw, 40px);
+    }
+
+    .cta .join {
+      font-size: clamp(24px, 5.6vw, 28px);
+    }
+  }
+</style>
+</head>
+<body>
+<main class="sheet" aria-label="Thank you endorsers portrait postcard version 02">
+  <div class="inner">
+    <h1 class="title">Thank you, Endorsers!</h1>
+    <p class="orgs">Brookline By Design<br>Brookline For Responsible Government</p>
+    <section class="featured" id="featured"></section>
+    <section class="all" id="all"></section>
+    <footer class="footer">
+      <div class="cta">
+        <p class="join">Join the list!</p>
+        <div class="email">jvanscoyoc0@gmail.com</div>
+      </div>
+      <div class="qr">
+        <img src="public/qrcode.png" alt="QR code">
+      </div>
+    </footer>
+  </div>
+</main>
+<script>
+  const featured = [
+    ["Bernard Greene", "Select Board Chair"],
+    ["David Pearlman", "Select Board Vice Chair"],
+    ["Paul Warren", "Select Board"],
+    ["Michael Merrill", "Former Select Board"],
+    ["Zvi (Skip) Sesling", "Former Select Board"],
+    ["Richard Benka", "Former Select Board"],
+    ["Robert Weintraub", "School Committee"],
+    ["Carolyn Thall", "School Committee"],
+    ["Danna Perry", "School Committee"],
+    ["Jesse Hefter", "School Committee"],
+    ["Liz Linder", "2025 Select Board candidate"],
+    ["Kate Poverman", "Former Town Moderator"],
+    ["Sandy Gadsby", "Former Town Moderator"]
+  ];
+
+  const endorsers = [
+    "Nancy Adler", "Pat Ahlin", "Martina Albright", "Saralynn Allaire",
+    "Pamela Allara", "Scott Andersen", "Rosemary Ashby", "John Bassett",
+    "Jim Batchelor", "Clara Batchelor", "Jerry Berger", "Susan Berger",
+    "Eileen Berger", "Michael Berger", "Ben Binbaum", "Peter Bleyleben",
+    "Sara Salvo Blood", "Roger Blood", "Sam Botsford", "Edie Brickman",
+    "Pauline Ho Bynum", "Narcissa Campion", "Peggy Campion", "Tracy Clark",
+    "Abby Coffin", "Susan F Cohen", "Debby K Cohen", "George Cole",
+    "Susan Helms Daley", "Susan Dechter", "John Dempsey", "Marie desJardins",
+    "Murray Dewart", "Mary Dewart", "Dennis Dewitt", "John Doggett",
+    "David Eisenberg", "Elton Elperin", "Tom Elwertowski", "Elizabeth Erdman",
+    "Sarah Ericsson", "Susan Erickson", "Anne Farrington", "Chuck Farrington",
+    "Jonathan Fine", "Marcia Fisch", "Julian Fisher", "Dale Flecker",
+    "Marion Freedman-Gurspan", "Anita Fritze", "David Marc Goldstein",
+    "Ellen Golde", "Bambi Good", "Ellen Goodman", "Rhoda Goodwin",
+    "Mark Gray", "Nathan Gunner", "Sally Guy", "Benedicte Hallowell",
+    "Rory Hallowell", "Casey Hatchett", "Debbie Hatzieleftheriadis",
+    "Gerard Hayes", "Barbara Hebert", "John Hebert", "Robin Hennessey",
+    "Carol Hillman", "Fran Hoy", "Richard Mazandi Iseke", "Cerise Jacobs",
+    "Nicholas Johnson", "Joyce Jozwicki", "Barr Jozwicki", "Janice Kahn",
+    "Ruth Kaplan", "Priscilla Karnovsky", "Kitty Kaufman", "Janet Kawada",
+    "David King", "Kristine Knauf", "Geri Lambert", "Jonathan Lau",
+    "Marian Lazar", "Gerald Lazar", "Frederick Lebow", "Stephen Ledbetter",
+    "David Lescohier", "Carol Levin", "Bruce Levin", "Fred Levitan",
+    "Alan Leviton", "Nancy Lew", "Ken Lewis", "Karen Livingston",
+    "Pam Lodish", "Mark Lowenstein", "Richard Mai", "Carol Macbain",
+    "Lucy Mack", "Linda Mancini", "Jon Margolis", "Hugh Mattison",
+    "Arlene Mattison", "Michael Maynard", "Chris McArdle", "Colin McArdle",
+    "Diana McClure", "John McCullough", "Eric McNulty", "Steve Mead",
+    "Letitia Mead", "Randolph Meiklejohn", "Robert Melzer", "Dr Keith Merlin",
+    "Judy Meyer", "Jessica Milhem", "Paul Hart Miller", "Peggy Morrison",
+    "Tom Mullin", "Terry Murphy", "Kendra O'Donnell", "Larry Onie",
+    "John Parla", "Linda Olson Pehlke", "Danna Perry", "Alisa Plazonja",
+    "Betsy Pollock", "Susan Podziba", "Luisa Raposo", "Judy Reece",
+    "Gleeson Rebello", "Peter Richardson", "Pam Roberts", "Rosemarie Roque",
+    "Barry Rosen", "A. Joseph Ross", "Jeffrey Ross", "Christine Rossell",
+    "Stuart Rubinow", "Bonnie Sashin", "Cheryl Schaffer", "Jill Schiff",
+    "Cathleen Schoen", "Robert Schoen", "John Seay", "Judy Selwyn",
+    "Lee Selwyn", "Ronnie Shapiro", "Francis Shedd-Fisher", "Barbara Sherman",
+    "John Sherman", "Ellen Shoner", "John Shreffler", "Felina Silver Robinson",
+    "Stanley Spiegel", "Alexandra Spingarn", "Molly Turlisch",
+    "Judith Vanderkay", "Barbara VanScoyoc", "Kathleen Vieweg",
+    "Donnie Wolosenko", "Jerry Wolosenko", "Mark Zarrillo"
+  ];
+
+  const featuredEl = document.getElementById("featured");
+  const allEl = document.getElementById("all");
+
+  featuredEl.innerHTML = featured.map(([name, title]) => (
+    `<div class="featured-item"><span class="name">${name},</span> ${title}</div>`
+  )).join("");
+
+  allEl.innerHTML = endorsers.map((name, index) => {
+    const suffix = index === endorsers.length - 1 ? "" : ", ";
+    return `<span>${name}${suffix}</span>`;
+  }).join("");
+</script>
+</body>
+</html>

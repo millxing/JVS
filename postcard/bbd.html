@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BBD Text</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F0EBE1;
+    --navy: #1B3A5C;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    min-height: 100%;
+  }
+
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: var(--paper);
+    color: var(--navy);
+    font-family: "Avenir Next Condensed", "Roboto Condensed", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .stage {
+    width: min(100vw, 1600px);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: clamp(32px, 6vw, 80px);
+  }
+
+  .wordmark {
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.03em;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    color: var(--navy);
+  }
+
+  .brookline {
+    font-size: clamp(72px, 10vw, 168px);
+    letter-spacing: -0.045em;
+  }
+
+  .by {
+    font-size: clamp(52px, 7vw, 114px);
+    letter-spacing: -0.05em;
+    transform: translateY(0.045em);
+  }
+
+  .design {
+    font-size: clamp(84px, 10.8vw, 182px);
+    letter-spacing: -0.05em;
+  }
+
+  @media (max-width: 900px) {
+    .wordmark {
+      white-space: normal;
+      flex-wrap: wrap;
+      row-gap: 0;
+    }
+  }
+
+  @media print {
+    body,
+    .stage {
+      min-height: auto;
+      width: auto;
+      padding: 0.4in;
+      background: var(--paper);
+    }
+  }
+</style>
+</head>
+<body>
+  <main class="stage">
+    <section class="wordmark" aria-label="Brookline by DESIGN text on cream background">
+      <span class="brookline">Brookline</span>
+      <span class="by">by</span>
+      <span class="design">DESIGN</span>
+    </section>
+  </main>
+</body>
+</html>

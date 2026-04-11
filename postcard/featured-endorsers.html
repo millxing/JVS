@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Featured Endorsers</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B3A5C;
+    --cream: #F0EBE1;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--cream);
+  }
+
+  body {
+    padding: 24px;
+  }
+
+  .element {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 28px;
+    max-width: 980px;
+    color: var(--navy);
+    font-family: "Inter", sans-serif;
+  }
+
+  .item {
+    font-size: 22px;
+    line-height: 1.22;
+    font-weight: 600;
+  }
+
+  .name {
+    font-weight: 800;
+  }
+</style>
+</head>
+<body>
+  <div class="element" id="featured"></div>
+  <script>
+    const featured = [
+      ["Bernard Greene", "Select Board Chair"],
+      ["David Pearlman", "Select Board Vice Chair"],
+      ["Paul Warren", "Select Board"],
+      ["Michael Merrill", "Former Select Board"],
+      ["Zvi (Skip) Sesling", "Former Select Board"],
+      ["Richard Benka", "Former Select Board"],
+      ["Robert Weintraub", "School Committee"],
+      ["Carolyn Thall", "School Committee"],
+      ["Danna Perry", "School Committee"],
+      ["Jesse Hefter", "School Committee"],
+      ["Liz Linder", "2025 Select Board candidate"],
+      ["Kate Poverman", "Former Town Moderator"],
+      ["Sandy Gadsby", "Former Town Moderator"]
+    ];
+
+    document.getElementById("featured").innerHTML = featured.map(([name, title]) => (
+      `<div class="item"><span class="name">${name},</span> ${title}</div>`
+    )).join("");
+  </script>
+</body>
+</html>

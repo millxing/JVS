@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blank Landscape Blue Card</title>
+<style>
+  :root {
+    --paper: #1B3A5C;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: #d7d2c8;
+  }
+
+  .card {
+    width: 9in;
+    height: 6in;
+    background: var(--paper);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18), 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+    }
+
+    .card {
+      box-shadow: none;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    body {
+      padding: 0;
+    }
+
+    .card {
+      width: 100vw;
+      height: 66.6667vw;
+      box-shadow: none;
+    }
+  }
+</style>
+</head>
+<body>
+  <main class="card" aria-label="Blank 9 by 6 landscape postcard in website navy"></main>
+</body>
+</html>

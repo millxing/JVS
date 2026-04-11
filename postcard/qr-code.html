@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code</title>
+<style>
+  :root {
+    --cream: #F0EBE1;
+    --navy: #1B3A5C;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--cream);
+  }
+
+  body {
+    padding: 24px;
+  }
+
+  .frame {
+    display: inline-flex;
+    padding: 8px;
+    border: 2px solid rgba(27, 58, 92, 0.22);
+    background: #ffffff;
+  }
+
+  img {
+    display: block;
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <img src="../public/qrcode.png" alt="Campaign QR code">
+  </div>
+</body>
+</html>
