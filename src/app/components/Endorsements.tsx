@@ -23,7 +23,7 @@ const communityEndorsers = [
   "Nancy Adler", "Pat Ahlin", "Martina Albright", "Saralynn Allaire",
   "Pamela Allara", "Scott Andersen", "Rosemary Ashby", "John Bassett",
   "Jim Batchelor", "Clara Batchelor", "Carla Benka", "Jerry Berger", "Susan Berger",
-  "Eileen Berger", "Michael Berger", "Ben Binbaum", "Peter Bleyleben",
+  "Eileen Berger", "Michael Berger", "Ben Birnbaum", "Peter Bleyleben",
   "Sara Salvo Blood", "Roger Blood", "Sam Botsford", "Edie Brickman",
   "Pauline Ho Byпum", "Narcissa Campion", "Peggy Campion", "Tracy Clark", "Abby Coffin",
   "Susan F Cohen", "Debby K Cohen", "George Cole", "Susan Helms Daley", "Susan Dechter",
