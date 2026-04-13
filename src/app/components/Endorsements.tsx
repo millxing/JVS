@@ -10,6 +10,7 @@ const featuredEndorsers = [
   { name: "Michael Merrill", title: "Select Board 1990\u20131996, 2004\u20132007" },
   { name: "Zvi (Skip) Sesling", title: "Select Board, 1984\u20131990" },
   { name: "Richard Benka", title: "Select Board, 2008\u20132014" },
+  { name: "Kenneth Goldstein", title: "Select Board, 2009\u20132015" },
   { name: "Robert Weintraub", title: "School Committee" },
   { name: "Carolyn Thall", title: "School Committee" },
   { name: "Danna Perry", title: "School Committee" },
