@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instagram 02 Family</title>
+<link rel="stylesheet" href="./shared.css">
+<style>
+  .canvas {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at top left, rgba(232, 185, 77, 0.24), transparent 28%),
+      linear-gradient(180deg, #f6f1e8 0%, #efe7d9 100%);
+  }
+
+  .photo {
+    position: absolute;
+    inset: 124px 84px 268px 84px;
+    border-radius: 36px;
+    overflow: hidden;
+    box-shadow: 0 24px 70px rgba(17, 24, 39, 0.18);
+  }
+
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .copy {
+    position: absolute;
+    left: 82px;
+    right: 82px;
+    bottom: 88px;
+    color: var(--navy);
+  }
+
+  .copy h1 {
+    margin: 0;
+    font-family: "Merriweather", Georgia, serif;
+    font-size: 62px;
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+    font-weight: 700;
+  }
+
+  .copy h1 span {
+    color: var(--gold);
+  }
+
+  .copy p {
+    margin: 14px 0 0;
+    max-width: 760px;
+    font-size: 30px;
+    line-height: 1.24;
+    font-weight: 500;
+    color: #4c5560;
+  }
+
+  .mini {
+    position: absolute;
+    top: 36px;
+    left: 36px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(27, 58, 92, 0.92);
+    color: white;
+    z-index: 5;
+  }
+
+  .mini img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+
+  .mini strong {
+    font-size: 14px;
+    line-height: 1.1;
+  }
+</style>
+</head>
+<body>
+  <main class="post">
+    <div class="canvas"></div>
+    <div class="mini">
+      <img src="../assets/jvs2.png" alt="John VanScoyoc portrait">
+      <strong>John VanScoyoc<br>for Select Board</strong>
+    </div>
+
+    <section class="photo">
+      <img src="../assets/family2_upscaled.png" alt="John VanScoyoc family photo">
+    </section>
+
+    <section class="copy">
+      <h1>Brookline is about <span>family</span>.</h1>
+      <p>Strong neighborhoods, safe streets, and a town where the next generation can stay, grow, and belong.</p>
+    </section>
+  </main>
+</body>
+</html>

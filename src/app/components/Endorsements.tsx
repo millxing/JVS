@@ -54,7 +54,7 @@ const communityEndorsers = [
   "Larry Onie", "John Parla", "Linda Olson Pehlke", "Danna Perry",
   "Alisa Plazonja", "Betsy Pollock", "Susan Podziba", "Luisa Raposo",
   "Judy Reece", "Gleeson Rebello", "Peter Richardson", "Pam Roberts", "Rosemarie Roque",
-  "Barry Rosen", "A. Joseph Ross", "Jeffrey Ross", "Christine Rossell", "Stuart Rubinow",
+  "Barry Rosen", "A. Joseph Ross", "Jeffrey Ross", "Christine Rossell", "Stuart Rubinow", "Renee Ruthel",
   "Bonnie Sashin", "Cheryl Schaffer", "Jill Schiff", "Cathleen Schoen",
   "Robert Schoen", "Yael Neeman Schubert", "John Seay", "Judy Selwyn", "Lee Selwyn",
   "Matthew Shakespeare", "Ronnie Shapiro", "Jim Shea", "Nancy Shea", "Francis Shedd-Fisher", "Barbara Sherman",
