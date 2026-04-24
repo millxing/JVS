@@ -18,6 +18,7 @@ const featuredEndorsers = [
   { name: "Liz Linder", title: "2025 Select Board candidate" },
   { name: "Kate Poverman", title: "Former Town Moderator" },
   { name: "Sandy Gadsby", title: "Former Town Moderator" },
+  { name: "Evelyn Murphy", title: "Former MA Lieutenant Governor"},
 ];
 
 const communityEndorsers = [
