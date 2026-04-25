@@ -21,7 +21,7 @@ export default function Footer() {
             <h4 className="font-semibold text-white text-sm mb-3 uppercase tracking-wider">
               Contact
             </h4>
-            <div className="space-y-2 text-sm">
+            <div className="space-y-2 text-sm text-center md:text-left">
               <p>Committee to Elect John VanScoyoc</p>
               <p>307 Reservoir Rd.</p>
               <p>Brookline, MA 02467</p>
@@ -41,6 +41,21 @@ export default function Footer() {
                   jvanscoyoc0@gmail.com
                 </a>
               </p>
+              <div className="pt-3 flex justify-center md:justify-start">
+                <a
+                  href="https://www.instagram.com/jvanscoyoc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit John VanScoyoc on Instagram"
+                  className="transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-dark rounded-sm"
+                >
+                  <img
+                    src="/assets/instagram.svg"
+                    alt=""
+                    className="h-12 w-12"
+                  />
+                </a>
+              </div>
             </div>
           </div>
 
