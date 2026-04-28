@@ -28,7 +28,7 @@ const communityEndorsers = [
   "Eileen Berger", "Michael Berger", "Henry Berman", "Ben Birnbaum", "Peter Bleyleben",
   "Sara Salvo Blood", "Roger Blood", "Sam Botsford", "Edie Brickman",
   "Pauline Ho Byпum", "Narcissa Campion", "Peggy Campion", "Elizabeth Childs", "Tracy Clark", "Abby Coffin",
-  "Susan F Cohen", "Debby K Cohen", "George Cole", "Susan Helms Daley", "Susan Dechter",
+  "Susan F Cohen", "Debby K Cohen", "George Cole", "Arthur Conquest", "Susan Helms Daley", "Susan Dechter",
   "John Dempsey", "Marie desJardins", "Murray Dewart", "Mary Dewart",
   "Dennis Dewitt", "John Doggett", "Wendy Drobnyk", "David Eisenberg", "Elton Elperin", "Tom Elwertowski",
   "Elizabeth Erdman", "Sarah Ericsson", "Susan Erickson", "Anne Farrington",
