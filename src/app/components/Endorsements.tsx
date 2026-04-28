@@ -19,7 +19,7 @@ const featuredEndorsers = [
   { name: "Kate Poverman", title: "Former Town Moderator" },
   { name: "Sandy Gadsby", title: "Former Town Moderator" },
   { name: "Evelyn Murphy", title: "Former MA Lieutenant Governor"},
-  { name: "John Caron", title: "Assistant Moderator"},
+  { name: "John Karon", title: "Assistant Moderator"},
 ];
 
 const communityEndorsers = [
