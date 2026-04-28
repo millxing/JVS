@@ -41,7 +41,7 @@ export default function Footer() {
                   jvanscoyoc0@gmail.com
                 </a>
               </p>
-              <div className="pt-3 flex justify-center md:justify-start">
+              <div className="pt-3 flex items-center justify-center md:justify-start gap-3">
                 <a
                   href="https://www.instagram.com/jvanscoyoc/"
                   target="_blank"
@@ -54,6 +54,22 @@ export default function Footer() {
                     alt=""
                     className="h-12 w-12"
                   />
+                </a>
+                <a
+                  href="https://x.com/johnvanscoyoc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit John VanScoyoc on X"
+                  className="h-12 w-12 flex items-center justify-center rounded-sm text-white bg-black transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-dark"
+                >
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    className="h-6 w-6"
+                    fill="currentColor"
+                  >
+                    <path d="M18.9 2.25h3.68l-8.04 9.19L24 21.75h-7.41l-5.8-7.59-6.64 7.59H.47l8.6-9.83L0 2.25h7.59l5.24 6.93 6.07-6.93Zm-1.29 17.68h2.04L6.48 3.98H4.29l13.32 15.95Z" />
+                  </svg>
                 </a>
               </div>
             </div>

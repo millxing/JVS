@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Welcome from "./components/Welcome";
+import CampaignNews from "./components/CampaignNews";
 import Platform from "./components/Platform";
 import Accomplishments from "./components/Accomplishments";
 import Endorsements from "./components/Endorsements";
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Welcome />
+      <CampaignNews />
       <Platform />
       <Accomplishments />
       <Endorsements />
