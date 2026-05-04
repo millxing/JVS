@@ -33,7 +33,7 @@ const communityEndorsers = [
   "Susan F Cohen", "Debby K Cohen", "George Cole", "Arthur Conquest", "Susan Helms Daley", "Susan Dechter",
   "John Dempsey", "Marie desJardins", "Murray Dewart", "Mary Dewart",
   "Dennis Dewitt", "John Doggett", "Wendy Drobnyk", "David Eisenberg", "Elton Elperin", "Tom Elwertowski",
-  "Elizabeth Erdman", "Sarah Ericsson", "Susan Erickson", "Anne Farrington",
+  "Elizabeth Erdman", "Sarah Ericsson", "Susan Erickson", "Lisa Farber", "Anne Farrington",
   "Chuck Farrington", "Jonathan Fine", "Marcia Fisch", "Julian Fisher", "Jane Flanagan", 
   "Dale Flecker", "Jean-Senat Fleury", "Marion Freedman-Gurspan", "Anita Fritze",
   "Jane Gilman", "David Marc Goldstein", "Ellen Golde", "Bambi Good", "Ellen Goodman",
